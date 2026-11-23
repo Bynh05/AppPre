@@ -1,15 +1,44 @@
-const headers = $request.headers || {};
-const userAgent = headers['User-Agent'] || headers['user-agent'] || '';
-const config = JSON.parse($response.body);
+/**
+ * Locket_Unlocked.js — Firebase Remote Config (hnyb05 Self-Hosted)
+ * Check quyền qua https://hnyb05-locket.vercel.app/api/auth
+ * Giữ nguyên toàn bộ 48 link cdn.upanhlaylink.com, captions & popup hnyb05.
+ */
+(() => {
+  const AUTH_URL = "https://hnyb05-locket.vercel.app/api/auth";
+  const CACHE_FALLBACK_MS = 15 * 60 * 1000;
 
-if (userAgent.includes('Locket')) {
-  Object.assign(config, {
-  "Attention": "Hi! This was made by hnyb05."
-});
-  config.entries = config.entries || {};
+  if (typeof $response === "undefined" || !$response || !$response.body) {
+    return $done({});
+  }
 
-  Object.assign(config.entries, {
-  "android_subscribe_gold_button_enabled": "false",
+  const headers = (typeof $request !== "undefined" && $request && $request.headers) || {};
+  const userAgent = headers["User-Agent"] || headers["user-agent"] || "";
+  if (!/locket/i.test(userAgent)) {
+    return $done({});
+  }
+
+  let config = {};
+  try {
+    config = JSON.parse($response.body);
+  } catch {
+    return $done({});
+  }
+
+  function applyUnlockedConfig() {
+    config.state = "UPDATE";
+    config.templateVersion = String(Date.now());
+    Object.assign(config, {
+      "Attention": "Hi! This was made by hnyb05."
+    });
+    config.entries = config.entries || {};
+
+    Object.assign(config.entries, {
+      "cache_ttl_seconds": "0",
+      "client_cache_ttl_sec": "0",
+      "camera_filter_gold_only": "false",
+      "require_gold_for_filters": "false",
+      "all_filters_free": "true",
+      "android_subscribe_gold_button_enabled": "false",
   "profile_badge_visible": "true",
   "lunar_new_year_app_icon_enabled": "true",
   "settings_instagram_url": "https://hnyb05.vercel.app",
@@ -48,7 +77,7 @@ if (userAgent.includes('Locket')) {
   "upload_thumbnail_image_quality": "0.8",
   "upload_thumbnail_image_size": "1020",
   "max_friends_count": "999999999",
-  "friend_limit_mode": "0",
+  "friend_limit_mode": "disabled",
   "soft_friend_limit_threshold_count": "999999999",
   "show_friend_limit_on_cam": "false",
   "signup_max_friends_count": "999999999",
@@ -184,12 +213,12 @@ if (userAgent.includes('Locket')) {
     "streak_reminders": "enabled"
   },
   "upsell_features": {
-    "app_icon_picker": true,
-    "camera_roll": true,
-    "camera_theme": true,
-    "locket_views": true,
-    "remove_ads": true,
-    "custom_widget_frames": true
+    "app_icon_picker": false,
+    "camera_roll": false,
+    "camera_theme": false,
+    "locket_views": false,
+    "remove_ads": false,
+    "custom_widget_frames": false
   },
   "paywall_presentation_config": {
     "uid": "paywall_testflight",
@@ -197,7 +226,7 @@ if (userAgent.includes('Locket')) {
     "after_sent_moment": false,
     "on_foreground": false,
     "interval": 2592000,
-    "profile_banner": true
+    "profile_banner": false
   },
   "feature_discovery_popup_config": {
     "tag": "LOCKET GOLD!",
@@ -8698,18 +8727,83 @@ if (userAgent.includes('Locket')) {
     }
   ]
 };
+  if (
+    jsonConfigs.camera_filter_config &&
+    Array.isArray(jsonConfigs.camera_filter_config.remote_filters)
+  ) {
+    jsonConfigs.camera_filter_config.remote_filters.forEach((f) => {
+      Object.assign(f, {
+        requires_gold: false,
+        requiresGold: false,
+        is_gold: false,
+        isGold: false,
+        unlocked: true,
+        is_unlocked: true,
+        isUnlocked: true,
+        free: true,
+        allowsTryFilter: true,
+        allows_try_filter: true,
+      });
+    });
+  }
+
   for (const [key, value] of Object.entries(jsonConfigs)) {
     config.entries[key] = JSON.stringify(value);
   }
 
   try {
-    const streak = JSON.parse(config.entries.streak_config || '{}');
+    const streak = JSON.parse(config.entries.streak_config || "{}");
     Object.assign(streak, {
-  "minimum_recovery_count": 0,
-  "minimum_display_count": 0
-});
+      "minimum_recovery_count": 0,
+      "minimum_display_count": 0,
+    });
     config.entries.streak_config = JSON.stringify(streak);
   } catch {}
-}
 
-$done({ body: JSON.stringify(config) });
+  return $done({ body: JSON.stringify(config) });
+  }
+
+  const uid = (typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_UID")) || "";
+  const cachedAllowed =
+    (typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_ALLOWED")) === "1";
+  const lastAuthTs = Number(
+    (typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_AUTH_TS")) || "0",
+  );
+
+  if (!uid) {
+    return cachedAllowed && Date.now() - lastAuthTs < CACHE_FALLBACK_MS
+      ? applyUnlockedConfig()
+      : $done({});
+  }
+
+  $httpClient.post(
+    {
+      url: AUTH_URL,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ uid }),
+      timeout: 6,
+    },
+    (err, resp, data) => {
+      if (!err && data) {
+        try {
+          const auth = JSON.parse(data);
+          if (typeof $persistentStore !== "undefined") {
+            $persistentStore.write(auth.allowed ? "1" : "0", "HNYB05_ALLOWED");
+            $persistentStore.write(String(auth.status || ""), "HNYB05_STATUS");
+            $persistentStore.write(String(Date.now()), "HNYB05_AUTH_TS");
+            if (Array.isArray(auth.vipUids)) {
+              $persistentStore.write(JSON.stringify(auth.vipUids), "HNYB05_VIP_UIDS");
+            }
+          }
+          return auth.allowed === true ? applyUnlockedConfig() : $done({});
+        } catch {
+          return $done({});
+        }
+      }
+
+      return cachedAllowed && Date.now() - lastAuthTs < CACHE_FALLBACK_MS
+        ? applyUnlockedConfig()
+        : $done({});
+    },
+  );
+})();
