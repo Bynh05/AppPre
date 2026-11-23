@@ -13,8 +13,6 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,api.revenuecat.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,api.rc-backup.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,api.locketcamera.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,locketcamera.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,us-central1-locket-4252a.cloudfunctions.net),(PROTOCOL,UDP)),REJECT
 
 [Header Rewrite]
@@ -30,11 +28,6 @@ http-request ^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del If
 http-request ^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del if-modified-since
 http-request ^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del If-Modified-Since
 http-request ^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del x-goog-if-none-match
-
-http-request ^https?:\/\/api\.locketcamera\.com\/.+ header-del if-none-match
-http-request ^https?:\/\/api\.locketcamera\.com\/.+ header-del If-None-Match
-http-request ^https?:\/\/api\.locketcamera\.com\/.+ header-del if-modified-since
-http-request ^https?:\/\/api\.locketcamera\.com\/.+ header-del If-Modified-Since
 
 http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
 
@@ -125,14 +118,14 @@ BeautyPlus = type=http-response, pattern=https:\/\/(api\.mr\.pixocial\.com\/v1\/
 #************************************#
 
 #LocketGold + Photobooth + Filter AI (hnyb05 Self-Hosted -> https://hnyb05-locket.vercel.app)
-#hostname = api.revenuecat.com, api.rc-backup.com, firebaseremoteconfig.googleapis.com, api.locketcamera.com, *.locketcamera.com, us-central1-locket-4252a.cloudfunctions.net, hnyb05-locket.vercel.app
+#hostname = api.revenuecat.com, api.rc-backup.com, firebaseremoteconfig.googleapis.com, us-central1-locket-4252a.cloudfunctions.net, hnyb05-locket.vercel.app
 deleteHeader_RC = type=http-request, pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/deleteHeader.js, timeout=60
 deleteHeader_Firebase = type=http-request, pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/deleteHeader.js, timeout=60
 locket_gold = type=http-response, pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_hnyb05.js, requires-body=true, max-size=-1, timeout=60
 locket_rc = type=http-response, pattern=^https?:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Unlocked.js, requires-body=true, max-size=-1, timeout=60
-locket_pb_req = type=http-request, pattern=^https?:\/\/(us-central1-locket-4252a\.cloudfunctions\.net|api\.locketcamera\.com)\/generateFilteredImage, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Photobooth.js, requires-body=true, max-size=-1, timeout=60
-locket_profile_req = type=http-request, pattern=^https?:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/changeProfileInfo, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Profile_Auth.js, requires-body=true, max-size=-1, timeout=60
-locket_profile_resp = type=http-response, pattern=^https?:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(fetchUserV2|getAccountInfo|getLatestMomentV2|getUser|changeProfileInfo), script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Profile_Auth.js, requires-body=true, max-size=-1, timeout=60
+locket_pb_req = type=http-request, pattern=^https?:\/\/us-central1-locket-4252a\.cloudfunctions\.net\/generateFilteredImage, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Photobooth.js, requires-body=true, max-size=-1, timeout=60
+locket_profile_req = type=http-request, pattern=^https?:\/\/us-central1-locket-4252a\.cloudfunctions\.net\/changeProfileInfo, script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Profile_Auth.js, requires-body=true, max-size=-1, timeout=60
+locket_profile_resp = type=http-response, pattern=^https?:\/\/us-central1-locket-4252a\.cloudfunctions\.net\/(fetchUserV2|getAccountInfo|getLatestMomentV2|getUser|changeProfileInfo), script-path=https://raw.githubusercontent.com/Bynh05/AppPre/refs/heads/main/js/Locket_Profile_Auth.js, requires-body=true, max-size=-1, timeout=60
 #************************************#
 
 #RevenueCatVip
@@ -160,4 +153,4 @@ Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
 
 [MITM]
-hostname = %APPEND%, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, premium*.truecaller.com, sub.store, api.revenuecat.com, api.rc-backup.com, firebaseremoteconfig.googleapis.com, api.locketcamera.com, *.locketcamera.com, us-central1-locket-4252a.cloudfunctions.net, hnyb05-locket.vercel.app, buy.itunes.apple.com, spclient.wg.spotify.com, *spclient.spotify.com, api-mobile.soundcloud.com, api.picsart.com, us-central1-alight-creative.cloudfunctions.net, api-sub.meitu.com, photos.adobe.io, ap*.intsig.net, api-account.kinemasters.com, api.mr.pixocial.com, newbeee-api.beautyplus.com, user-snow-api.snow.me, h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com
+hostname = %APPEND%, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, s.youtube.com, -redirector*.googlevideo.com, premium*.truecaller.com, sub.store, api.revenuecat.com, api.rc-backup.com, firebaseremoteconfig.googleapis.com, us-central1-locket-4252a.cloudfunctions.net, hnyb05-locket.vercel.app, buy.itunes.apple.com, spclient.wg.spotify.com, *spclient.spotify.com, api-mobile.soundcloud.com, api.picsart.com, us-central1-alight-creative.cloudfunctions.net, api-sub.meitu.com, photos.adobe.io, ap*.intsig.net, api-account.kinemasters.com, api.mr.pixocial.com, newbeee-api.beautyplus.com, user-snow-api.snow.me, h5.xiuxiu.meitu.com, api.xiuxiu.meitu.com
