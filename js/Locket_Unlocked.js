@@ -77,7 +77,7 @@
   "upload_thumbnail_image_quality": "0.8",
   "upload_thumbnail_image_size": "1020",
   "max_friends_count": "999999999",
-  "friend_limit_mode": "disabled",
+  "friend_limit_mode": "0",
   "soft_friend_limit_threshold_count": "999999999",
   "show_friend_limit_on_cam": "false",
   "signup_max_friends_count": "999999999",
