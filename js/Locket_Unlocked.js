@@ -8814,7 +8814,21 @@
       config.entries.streak_config = JSON.stringify(streak);
     } catch { }
 
-    return $done({ body: JSON.stringify(config) });
+    const respHeaders = {};
+    const origHeaders = ($response && $response.headers) || {};
+    for (const k of Object.keys(origHeaders)) {
+      const lk = k.toLowerCase();
+      if (lk === "etag" || lk === "cache-control" || lk === "content-length") continue;
+      respHeaders[k] = origHeaders[k];
+    }
+    respHeaders["ETag"] = `"hnyb05-${Date.now()}"`;
+    respHeaders["Cache-Control"] = "no-store, max-age=0";
+
+    console.log(
+      `[hnyb05-rc] applied title=${studioTitle} captions=${customCaptions.length} frames=${customFrames.length}`,
+    );
+
+    return $done({ headers: respHeaders, body: JSON.stringify(config) });
   }
 
   function readCachedStudio() {
