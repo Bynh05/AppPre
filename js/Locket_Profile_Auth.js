@@ -35,17 +35,16 @@
       return decodeURIComponent(out);
     }
 
-    function decodeUidFromAuth(headers) {
-      if (!headers) return "";
+    function decodeJwtFromAuth(headers) {
+      if (!headers) return null;
       const auth = headers["Authorization"] || headers["authorization"] || "";
       const token = String(auth).replace(/^bearer\s+/i, "").trim();
       const parts = token.split(".");
-      if (parts.length !== 3 || !parts[1]) return "";
+      if (parts.length !== 3 || !parts[1]) return null;
       try {
-        const payload = JSON.parse(base64UrlToUtf8(parts[1]));
-        return String(payload.user_id || payload.sub || payload.uid || "").trim();
+        return JSON.parse(base64UrlToUtf8(parts[1]));
       } catch {
-        return "";
+        return null;
       }
     }
 
@@ -60,7 +59,9 @@
     }
 
     const reqHeaders = (typeof $request !== "undefined" && $request && $request.headers) || {};
-    const jwtUid = decodeUidFromAuth(reqHeaders);
+    const jwt = decodeJwtFromAuth(reqHeaders);
+    const jwtUid = jwt ? String(jwt.user_id || jwt.sub || jwt.uid || "").trim() : "";
+    const jwtName = jwt && typeof jwt.name === "string" ? jwt.name.trim() : "";
     const uid = jwtUid || readStore("HNYB05_UID");
     if (jwtUid) writeStore("HNYB05_UID", jwtUid);
     if (!uid) return $done({});
@@ -72,9 +73,29 @@
       return $done({});
     }
 
+    function extractFields(node) {
+      const username =
+        typeof node.username === "string"
+          ? node.username.trim().replace(/^@+/, "")
+          : typeof node.handle === "string"
+            ? node.handle.trim().replace(/^@+/, "")
+            : "";
+      const fullName = [node.first_name || node.firstName, node.last_name || node.lastName]
+        .filter((v) => typeof v === "string" && v.trim())
+        .map((v) => v.trim())
+        .join(" ");
+      const displayName = String(
+        node.displayName || node.display_name || fullName || node.name || "",
+      ).trim();
+      if (username || displayName) {
+        return { username, displayName };
+      }
+      return null;
+    }
+
     // Chỉ trích xuất thông tin khi đúng UID của chính chủ máy
     function extractOwnProfile(node, targetUid, depth) {
-      if (!node || typeof node !== "object" || depth > 5) return null;
+      if (!node || typeof node !== "object" || depth > 6) return null;
       if (Array.isArray(node)) {
         for (const item of node) {
           const found = extractOwnProfile(item, targetUid, depth + 1);
@@ -83,14 +104,11 @@
         return null;
       }
 
-      const nodeUid = node.uid || node.user_uid || node.userId || node.localId || "";
+      const nodeUid =
+        node.uid || node.user_uid || node.userId || node.user_id || node.localId || node.id || "";
       if (nodeUid === targetUid) {
-        const username = typeof node.username === "string" ? node.username.trim() : "";
-        const fullName = [node.first_name, node.last_name].filter(Boolean).join(" ").trim();
-        const displayName = String(node.displayName || node.display_name || fullName || "").trim();
-        if (username || displayName) {
-          return { username, displayName };
-        }
+        const fields = extractFields(node);
+        if (fields) return fields;
       }
 
       for (const key of Object.keys(node)) {
@@ -103,7 +121,28 @@
       return null;
     }
 
-    const profile = extractOwnProfile(data, uid, 0);
+    let profile = extractOwnProfile(data, uid, 0);
+
+    // Fallback: nếu request body ghi rõ user_uid của chính chủ (vd fetchUserV2/changeProfileInfo)
+    if (!profile && typeof $request !== "undefined" && $request && $request.body) {
+      try {
+        const reqJson = JSON.parse(String($request.body));
+        const reqData = reqJson && reqJson.data ? reqJson.data : reqJson;
+        const reqTargetUid =
+          reqData && (reqData.user_uid || reqData.uid || reqData.userId || "");
+        const reqUrl = String($request.url || "");
+        if (reqTargetUid === uid || /changeProfileInfo|fetchAccount|getAccountInfo/i.test(reqUrl)) {
+          const resNode = (data && data.result && data.result.data) || (data && data.result) || data;
+          if (resNode && typeof resNode === "object") {
+            profile = extractFields(resNode) || extractFields(reqData || {});
+          }
+        }
+      } catch {}
+    }
+
+    if (!profile && jwtName) {
+      profile = { username: "", displayName: jwtName };
+    }
     if (!profile) {
       return $done({});
     }
@@ -131,7 +170,7 @@
           username: profile.username,
           displayName: profile.displayName,
         }),
-        timeout: 3,
+        timeout: 4,
       },
       (err, resp, respBody) => {
         if (!err && respBody) {
