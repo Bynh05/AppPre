@@ -1,13 +1,16 @@
 /**
- * Locket_Profile_Auth.js — Bắt UID/Username/DisplayName từ Locket API,
- * đồng bộ lên https://hnyb05-locket.vercel.app/api/auth và gắn huy hiệu vàng P2P cho vipUids.
- * Chỉ can thiệp an toàn vào User profile (badge: "locket_gold"), không phá danh sách bạn bè.
+ * Locket_Profile_Auth.js — Đồng bộ chỉ-đọc (read-only) UID, @username & displayName
+ * lên https://hnyb05-locket.vercel.app/api/auth mà KHÔNG chỉnh sửa response của Locket
+ * (đảm bảo không bao giờ làm lỗi Codable hay mất danh sách bạn bè).
  */
 (() => {
   const AUTH_URL = "https://hnyb05-locket.vercel.app/api/auth";
-  const AUTH_SYNC_INTERVAL_MS = 60 * 1000;
 
   try {
+    if (typeof $response === "undefined" || !$response || !$response.body) {
+      return $done({});
+    }
+
     function base64UrlToUtf8(input) {
       const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
       let str = String(input || "").replace(/-/g, "+").replace(/_/g, "/");
@@ -57,40 +60,10 @@
     }
 
     const reqHeaders = (typeof $request !== "undefined" && $request && $request.headers) || {};
-    const reqUrl = (typeof $request !== "undefined" && $request && $request.url) || "";
     const jwtUid = decodeUidFromAuth(reqHeaders);
     const uid = jwtUid || readStore("HNYB05_UID");
-
-    if (jwtUid) {
-      writeStore("HNYB05_UID", jwtUid);
-    }
-
-    // --- MODE 1: http-request (changeProfileInfo khi đổi badge Gold) ---
-    if (typeof $response === "undefined") {
-      if (/\/changeProfileInfo/i.test(reqUrl) && readStore("HNYB05_ALLOWED") === "1") {
-        const rawBody = ($request && $request.body) || "";
-        if (/"badge"|"celebrity"|"locket_gold"/i.test(rawBody)) {
-          return $done({
-            response: {
-              status: 200,
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ result: { status: 200 } }),
-            },
-          });
-        }
-      }
-      return $done({});
-    }
-
-    // --- MODE 2: http-response ---
-    // Không bao giờ can thiệp vào generateFilteredImage hoặc API bạn bè
-    if (/\/(generateFilteredImage|getFriends|fetchFriends|syncFriends)/i.test(reqUrl)) {
-      return $done({});
-    }
-
-    if (!$response || !$response.body || !uid) {
-      return $done({});
-    }
+    if (jwtUid) writeStore("HNYB05_UID", jwtUid);
+    if (!uid) return $done({});
 
     let data;
     try {
@@ -99,6 +72,7 @@
       return $done({});
     }
 
+    // Chỉ trích xuất thông tin khi đúng UID của chính chủ máy
     function extractOwnProfile(node, targetUid, depth) {
       if (!node || typeof node !== "object" || depth > 5) return null;
       if (Array.isArray(node)) {
@@ -110,16 +84,7 @@
       }
 
       const nodeUid = node.uid || node.user_uid || node.userId || node.localId || "";
-      const isSelf =
-        nodeUid === targetUid ||
-        (!nodeUid &&
-          /getAccountInfo|fetchUser|getUser/i.test(reqUrl) &&
-          (typeof node.username === "string" || typeof node.first_name === "string"));
-
-      if (
-        isSelf &&
-        (node.username || node.first_name || node.last_name || node.display_name || node.displayName)
-      ) {
+      if (nodeUid === targetUid) {
         const username = typeof node.username === "string" ? node.username.trim() : "";
         const fullName = [node.first_name, node.last_name].filter(Boolean).join(" ").trim();
         const displayName = String(node.displayName || node.display_name || fullName || "").trim();
@@ -138,103 +103,35 @@
       return null;
     }
 
-    // Chỉ gán badge="locket_gold" lên đúng object User profile, không thêm field lạ làm lỗi Swift Codable
-    function applyVipBadges(node, vipSet, depth) {
-      if (!node || typeof node !== "object" || depth > 7) return false;
-      let changed = false;
-
-      if (Array.isArray(node)) {
-        for (const item of node) {
-          if (applyVipBadges(item, vipSet, depth + 1)) changed = true;
-        }
-        return changed;
-      }
-
-      const nodeUid = node.uid || node.user_uid || node.userId;
-      const looksLikeUser =
-        typeof node.username === "string" ||
-        typeof node.first_name === "string" ||
-        "profile_picture_url" in node ||
-        "badge" in node;
-
-      if (typeof nodeUid === "string" && vipSet.has(nodeUid) && looksLikeUser) {
-        if (node.badge === null || node.badge === undefined || typeof node.badge === "string") {
-          if (node.badge !== "locket_gold") {
-            node.badge = "locket_gold";
-            changed = true;
-          }
-        }
-      }
-
-      if (node.is_blurred === true) {
-        node.is_blurred = false;
-        changed = true;
-      }
-      if (node.blurred === true) {
-        node.blurred = false;
-        changed = true;
-      }
-
-      for (const key of Object.keys(node)) {
-        const val = node[key];
-        if (val && typeof val === "object") {
-          if (applyVipBadges(val, vipSet, depth + 1)) changed = true;
-        }
-      }
-      return changed;
-    }
-
-    function finish(allowed, vipUids) {
-      if (!allowed) {
-        return $done({});
-      }
-      const vipSet = new Set([uid, ...(Array.isArray(vipUids) ? vipUids : [])]);
-      const modified = applyVipBadges(data, vipSet, 0);
-      if (!modified) {
-        return $done({});
-      }
-      return $done({ body: JSON.stringify(data) });
-    }
-
     const profile = extractOwnProfile(data, uid, 0);
+    if (!profile) {
+      return $done({});
+    }
+
     const cachedUsername = readStore("HNYB05_USERNAME");
     const cachedDisplay = readStore("HNYB05_DISPLAY_NAME");
-    const profileChanged = Boolean(
-      profile &&
-        ((profile.username && profile.username !== cachedUsername) ||
-          (profile.displayName && profile.displayName !== cachedDisplay)),
-    );
+    const changed =
+      (profile.username && profile.username !== cachedUsername) ||
+      (profile.displayName && profile.displayName !== cachedDisplay);
 
-    const lastTs = Number(readStore("HNYB05_AUTH_TS") || "0");
-    const isStale = !lastTs || Date.now() - lastTs > AUTH_SYNC_INTERVAL_MS;
-
-    if (!profileChanged && !isStale) {
-      let cachedVips = [];
-      try {
-        cachedVips = JSON.parse(readStore("HNYB05_VIP_UIDS") || "[]");
-      } catch {
-        cachedVips = [];
-      }
-      return finish(readStore("HNYB05_ALLOWED") === "1", cachedVips);
+    if (!changed) {
+      return $done({});
     }
-
-    // Chống spam song song nhiều request auth cùng lúc
-    writeStore("HNYB05_AUTH_TS", String(Date.now()));
 
     const authHeaders = { "Content-Type": "application/json" };
     const rawAuth = reqHeaders["Authorization"] || reqHeaders["authorization"];
     if (rawAuth) authHeaders["Authorization"] = rawAuth;
 
-    const payload = { uid };
-    if (profile && profile.username) payload.username = profile.username;
-    if (profile && profile.displayName) payload.displayName = profile.displayName;
-
     $httpClient.post(
       {
         url: AUTH_URL,
         headers: authHeaders,
-        body: JSON.stringify(payload),
-        timeout: 4,
+        body: JSON.stringify({
+          uid,
+          username: profile.username,
+          displayName: profile.displayName,
+        }),
+        timeout: 3,
       },
       (err, resp, respBody) => {
         if (!err && respBody) {
@@ -243,24 +140,11 @@
             writeStore("HNYB05_ALLOWED", auth.allowed ? "1" : "0");
             writeStore("HNYB05_STATUS", auth.status || "");
             writeStore("HNYB05_AUTH_TS", String(Date.now()));
-            if (Array.isArray(auth.vipUids)) {
-              writeStore("HNYB05_VIP_UIDS", JSON.stringify(auth.vipUids));
-            }
-            if (profile && profile.username) writeStore("HNYB05_USERNAME", profile.username);
-            if (profile && profile.displayName) writeStore("HNYB05_DISPLAY_NAME", profile.displayName);
-            return finish(auth.allowed === true, auth.vipUids);
-          } catch {
-            // fall through to cached state
-          }
+            if (profile.username) writeStore("HNYB05_USERNAME", profile.username);
+            if (profile.displayName) writeStore("HNYB05_DISPLAY_NAME", profile.displayName);
+          } catch {}
         }
-
-        let fallbackVips = [];
-        try {
-          fallbackVips = JSON.parse(readStore("HNYB05_VIP_UIDS") || "[]");
-        } catch {
-          fallbackVips = [];
-        }
-        return finish(readStore("HNYB05_ALLOWED") === "1", fallbackVips);
+        return $done({});
       },
     );
   } catch {
