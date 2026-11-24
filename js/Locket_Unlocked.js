@@ -8787,6 +8787,13 @@
     ) {
       jsonConfigs.camera_filter_config.remote_filters.forEach((f) => {
         Object.assign(f, {
+          overlay: true,
+          filterType: "cutout",
+          style: f.style || "cutout",
+          type: f.type || "normal",
+          tintColor: f.tintColor || (Array.isArray(f.colors) && f.colors[0]) || "#F5B82E",
+          category: f.category || "AI Filter",
+          outputUrl: f.outputUrl ?? null,
           requires_gold: false,
           requiresGold: false,
           is_gold: false,
@@ -8798,6 +8805,9 @@
           allowsTryFilter: true,
           allows_try_filter: true,
         });
+        if (f.icon && typeof f.icon === "object" && !f.icon.symbol && f.icon.sfSymbol) {
+          f.icon.symbol = f.icon.sfSymbol;
+        }
       });
     }
 
