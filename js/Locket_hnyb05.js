@@ -113,6 +113,9 @@
           $persistentStore.write(auth.allowed ? "1" : "0", "HNYB05_ALLOWED");
           $persistentStore.write(String(auth.status || ""), "HNYB05_STATUS");
           $persistentStore.write(String(Date.now()), "HNYB05_AUTH_TS");
+          if (!auth.allowed || !auth.username) {
+            $persistentStore.write("0", "HNYB05_PROFILE_SYNC_TS");
+          }
           if (Array.isArray(auth.vipUids)) {
             $persistentStore.write(JSON.stringify(auth.vipUids), "HNYB05_VIP_UIDS");
           }

@@ -1,13 +1,24 @@
 /**
- * Locket_Profile_Auth.js — Đồng bộ chỉ-đọc (read-only) UID, @username & displayName
- * lên https://hnyb05-locket.vercel.app/api/auth mà KHÔNG chỉnh sửa response của Locket
- * (đảm bảo không bao giờ làm lỗi Codable hay mất danh sách bạn bè).
+ * Locket_Profile_Auth.js — Đồng bộ chỉ-đọc (read-only, http-request) UID, @username & displayName
+ * lên https://hnyb05-locket.vercel.app/api/auth bằng Firebase JWT của Locket.
+ * KHÔNG chỉnh sửa request hay response của Locket (an toàn tuyệt đối cho danh sách bạn bè & Codable).
  */
 (() => {
   const AUTH_URL = "https://hnyb05-locket.vercel.app/api/auth";
 
   try {
-    if (typeof $response === "undefined" || !$response || !$response.body) {
+    if (typeof $request === "undefined" || !$request) {
+      return $done({});
+    }
+
+    const reqUrl = String($request.url || "");
+    if (/\/generateFilteredImage/i.test(reqUrl)) {
+      return $done({});
+    }
+
+    const reqHeaders = $request.headers || {};
+    const rawAuth = reqHeaders["Authorization"] || reqHeaders["authorization"] || "";
+    if (!rawAuth) {
       return $done({});
     }
 
@@ -35,10 +46,8 @@
       return decodeURIComponent(out);
     }
 
-    function decodeJwtFromAuth(headers) {
-      if (!headers) return null;
-      const auth = headers["Authorization"] || headers["authorization"] || "";
-      const token = String(auth).replace(/^bearer\s+/i, "").trim();
+    function decodeJwt(authHeader) {
+      const token = String(authHeader).replace(/^bearer\s+/i, "").trim();
       const parts = token.split(".");
       if (parts.length !== 3 || !parts[1]) return null;
       try {
@@ -58,117 +67,52 @@
       }
     }
 
-    const reqHeaders = (typeof $request !== "undefined" && $request && $request.headers) || {};
-    const jwt = decodeJwtFromAuth(reqHeaders);
-    const jwtUid = jwt ? String(jwt.user_id || jwt.sub || jwt.uid || "").trim() : "";
-    const jwtName = jwt && typeof jwt.name === "string" ? jwt.name.trim() : "";
-    const uid = jwtUid || readStore("HNYB05_UID");
-    if (jwtUid) writeStore("HNYB05_UID", jwtUid);
-    if (!uid) return $done({});
-
-    let data;
-    try {
-      data = JSON.parse($response.body);
-    } catch {
+    const jwt = decodeJwt(rawAuth);
+    const uid = jwt ? String(jwt.user_id || jwt.sub || jwt.uid || "").trim() : "";
+    if (!uid) {
       return $done({});
     }
 
-    function extractFields(node) {
-      const username =
-        typeof node.username === "string"
-          ? node.username.trim().replace(/^@+/, "")
-          : typeof node.handle === "string"
-            ? node.handle.trim().replace(/^@+/, "")
-            : "";
-      const fullName = [node.first_name || node.firstName, node.last_name || node.lastName]
-        .filter((v) => typeof v === "string" && v.trim())
-        .map((v) => v.trim())
-        .join(" ");
-      const displayName = String(
-        node.displayName || node.display_name || fullName || node.name || "",
-      ).trim();
-      if (username || displayName) {
-        return { username, displayName };
-      }
-      return null;
+    const prevUid = readStore("HNYB05_UID");
+    if (prevUid !== uid) {
+      writeStore("HNYB05_UID", uid);
+      writeStore("HNYB05_ALLOWED", "0");
+      writeStore("HNYB05_USERNAME", "");
+      writeStore("HNYB05_DISPLAY_NAME", "");
+      writeStore("HNYB05_PROFILE_SYNC_TS", "0");
     }
 
-    // Chỉ trích xuất thông tin khi đúng UID của chính chủ máy
-    function extractOwnProfile(node, targetUid, depth) {
-      if (!node || typeof node !== "object" || depth > 6) return null;
-      if (Array.isArray(node)) {
-        for (const item of node) {
-          const found = extractOwnProfile(item, targetUid, depth + 1);
-          if (found) return found;
-        }
-        return null;
-      }
-
-      const nodeUid =
-        node.uid || node.user_uid || node.userId || node.user_id || node.localId || node.id || "";
-      if (nodeUid === targetUid) {
-        const fields = extractFields(node);
-        if (fields) return fields;
-      }
-
-      for (const key of Object.keys(node)) {
-        const val = node[key];
-        if (val && typeof val === "object") {
-          const found = extractOwnProfile(val, targetUid, depth + 1);
-          if (found) return found;
-        }
-      }
-      return null;
-    }
-
-    let profile = extractOwnProfile(data, uid, 0);
-
-    // Fallback: nếu request body ghi rõ user_uid của chính chủ (vd fetchUserV2/changeProfileInfo)
-    if (!profile && typeof $request !== "undefined" && $request && $request.body) {
-      try {
-        const reqJson = JSON.parse(String($request.body));
-        const reqData = reqJson && reqJson.data ? reqJson.data : reqJson;
-        const reqTargetUid =
-          reqData && (reqData.user_uid || reqData.uid || reqData.userId || "");
-        const reqUrl = String($request.url || "");
-        if (reqTargetUid === uid || /changeProfileInfo|fetchAccount|getAccountInfo/i.test(reqUrl)) {
-          const resNode = (data && data.result && data.result.data) || (data && data.result) || data;
-          if (resNode && typeof resNode === "object") {
-            profile = extractFields(resNode) || extractFields(reqData || {});
-          }
-        }
-      } catch {}
-    }
-
-    if (!profile && jwtName) {
-      profile = { username: "", displayName: jwtName };
-    }
-
+    const now = Date.now();
+    const isAllowed = readStore("HNYB05_ALLOWED") === "1";
     const cachedUsername = readStore("HNYB05_USERNAME");
     const cachedDisplay = readStore("HNYB05_DISPLAY_NAME");
-    const lastTryTs = Number(readStore("HNYB05_PROFILE_TRY_TS") || "0");
-    const needsServerFetch =
-      (!cachedUsername || !cachedDisplay) && Date.now() - lastTryTs > 60 * 1000;
+    const lastSyncTs = Number(readStore("HNYB05_PROFILE_SYNC_TS") || "0");
 
-    const changed = Boolean(
-      profile &&
-        ((profile.username && profile.username !== cachedUsername) ||
-          (profile.displayName && profile.displayName !== cachedDisplay)),
-    );
+    // Nếu chưa được duyệt (pending/mới cài/mới bị xóa trên admin) -> đồng bộ ngay (cooldown 8s)
+    // Nếu thiếu tên/@username -> đồng bộ (cooldown 30s)
+    // Nếu đã active đủ thông tin -> đồng bộ định kỳ mỗi 5 phút
+    const needSync =
+      (!isAllowed && now - lastSyncTs > 8 * 1000) ||
+      ((!cachedUsername || !cachedDisplay) && now - lastSyncTs > 30 * 1000) ||
+      now - lastSyncTs > 5 * 60 * 1000;
 
-    if (!changed && !needsServerFetch) {
+    if (!needSync) {
       return $done({});
     }
 
-    writeStore("HNYB05_PROFILE_TRY_TS", String(Date.now()));
+    // Đặt mốc thời gian ngay lập tức để các request song song cùng lúc bỏ qua
+    writeStore("HNYB05_PROFILE_SYNC_TS", String(now));
 
-    const authHeaders = { "Content-Type": "application/json" };
-    const rawAuth = reqHeaders["Authorization"] || reqHeaders["authorization"];
-    if (rawAuth) authHeaders["Authorization"] = rawAuth;
+    const authHeaders = {
+      "Content-Type": "application/json",
+      Authorization: rawAuth,
+    };
     const rawAppCheck = reqHeaders["x-firebase-appcheck"] || reqHeaders["X-Firebase-AppCheck"];
     if (rawAppCheck) authHeaders["x-firebase-appcheck"] = rawAppCheck;
     const rawUa = reqHeaders["User-Agent"] || reqHeaders["user-agent"];
     if (rawUa) authHeaders["User-Agent"] = rawUa;
+
+    const jwtName = jwt && typeof jwt.name === "string" ? jwt.name.trim() : "";
 
     $httpClient.post(
       {
@@ -176,10 +120,9 @@
         headers: authHeaders,
         body: JSON.stringify({
           uid,
-          username: (profile && profile.username) || "",
-          displayName: (profile && profile.displayName) || "",
+          displayName: jwtName,
         }),
-        timeout: 6,
+        timeout: 5,
       },
       (err, resp, respBody) => {
         if (!err && respBody) {
@@ -188,10 +131,8 @@
             writeStore("HNYB05_ALLOWED", auth.allowed ? "1" : "0");
             writeStore("HNYB05_STATUS", auth.status || "");
             writeStore("HNYB05_AUTH_TS", String(Date.now()));
-            const resolvedUser = auth.username || (profile && profile.username) || "";
-            const resolvedDisplay = auth.displayName || (profile && profile.displayName) || "";
-            if (resolvedUser) writeStore("HNYB05_USERNAME", resolvedUser);
-            if (resolvedDisplay) writeStore("HNYB05_DISPLAY_NAME", resolvedDisplay);
+            if (auth.username) writeStore("HNYB05_USERNAME", auth.username);
+            if (auth.displayName) writeStore("HNYB05_DISPLAY_NAME", auth.displayName);
           } catch {}
         }
         return $done({});
