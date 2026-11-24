@@ -9,6 +9,7 @@
     "content-type": "Content-Type",
     "user-agent": "User-Agent",
     "accept-language": "Accept-Language",
+    "x-firebase-appcheck": "x-firebase-appcheck",
   };
 
   if (typeof $request === "undefined" || !$request || typeof $httpClient === "undefined") {

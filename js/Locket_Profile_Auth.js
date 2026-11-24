@@ -143,23 +143,32 @@
     if (!profile && jwtName) {
       profile = { username: "", displayName: jwtName };
     }
-    if (!profile) {
-      return $done({});
-    }
 
     const cachedUsername = readStore("HNYB05_USERNAME");
     const cachedDisplay = readStore("HNYB05_DISPLAY_NAME");
-    const changed =
-      (profile.username && profile.username !== cachedUsername) ||
-      (profile.displayName && profile.displayName !== cachedDisplay);
+    const lastTryTs = Number(readStore("HNYB05_PROFILE_TRY_TS") || "0");
+    const needsServerFetch =
+      (!cachedUsername || !cachedDisplay) && Date.now() - lastTryTs > 60 * 1000;
 
-    if (!changed) {
+    const changed = Boolean(
+      profile &&
+        ((profile.username && profile.username !== cachedUsername) ||
+          (profile.displayName && profile.displayName !== cachedDisplay)),
+    );
+
+    if (!changed && !needsServerFetch) {
       return $done({});
     }
+
+    writeStore("HNYB05_PROFILE_TRY_TS", String(Date.now()));
 
     const authHeaders = { "Content-Type": "application/json" };
     const rawAuth = reqHeaders["Authorization"] || reqHeaders["authorization"];
     if (rawAuth) authHeaders["Authorization"] = rawAuth;
+    const rawAppCheck = reqHeaders["x-firebase-appcheck"] || reqHeaders["X-Firebase-AppCheck"];
+    if (rawAppCheck) authHeaders["x-firebase-appcheck"] = rawAppCheck;
+    const rawUa = reqHeaders["User-Agent"] || reqHeaders["user-agent"];
+    if (rawUa) authHeaders["User-Agent"] = rawUa;
 
     $httpClient.post(
       {
@@ -167,10 +176,10 @@
         headers: authHeaders,
         body: JSON.stringify({
           uid,
-          username: profile.username,
-          displayName: profile.displayName,
+          username: (profile && profile.username) || "",
+          displayName: (profile && profile.displayName) || "",
         }),
-        timeout: 4,
+        timeout: 6,
       },
       (err, resp, respBody) => {
         if (!err && respBody) {
@@ -179,8 +188,10 @@
             writeStore("HNYB05_ALLOWED", auth.allowed ? "1" : "0");
             writeStore("HNYB05_STATUS", auth.status || "");
             writeStore("HNYB05_AUTH_TS", String(Date.now()));
-            if (profile.username) writeStore("HNYB05_USERNAME", profile.username);
-            if (profile.displayName) writeStore("HNYB05_DISPLAY_NAME", profile.displayName);
+            const resolvedUser = auth.username || (profile && profile.username) || "";
+            const resolvedDisplay = auth.displayName || (profile && profile.displayName) || "";
+            if (resolvedUser) writeStore("HNYB05_USERNAME", resolvedUser);
+            if (resolvedDisplay) writeStore("HNYB05_DISPLAY_NAME", resolvedDisplay);
           } catch {}
         }
         return $done({});
