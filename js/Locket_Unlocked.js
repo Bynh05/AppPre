@@ -24,7 +24,16 @@
     return $done({});
   }
 
-  function applyUnlockedConfig() {
+  function applyUnlockedConfig(studioData) {
+    const studio = studioData && typeof studioData === "object" ? studioData : {};
+    const studioTitle =
+      typeof studio.studioTitle === "string" && studio.studioTitle.trim()
+        ? studio.studioTitle.trim()
+        : "Của tôi";
+    const studioUrl = typeof studio.studioUrl === "string" ? studio.studioUrl.trim() : "";
+    const customCaptions = Array.isArray(studio.customCaptions) ? studio.customCaptions : [];
+    const customFrames = Array.isArray(studio.customFrames) ? studio.customFrames : [];
+
     config.state = "UPDATE";
     config.templateVersion = String(Date.now());
     Object.assign(config, {
@@ -42,7 +51,7 @@
       "profile_badge_visible": "true",
       "lunar_new_year_app_icon_enabled": "true",
       "settings_instagram_url": "https://hnyb05.vercel.app",
-      "settings_tiktok_url": "https://fb.com/hnyb05",
+      "settings_tiktok_url": studioUrl || "https://hnyb05-locket.vercel.app/studio",
       "star_sign_caption_image_url": "https://storage.googleapis.com/locket-public/overlays/star_signs",
       "history_ads_mode": "off",
       "history_ads_prefetch_count": "0",
@@ -232,7 +241,7 @@
         "tag": "LOCKET GOLD!",
         "tag_gradient": true,
         "tag_style": "gold_gradient",
-        "title": "Lên Locket Gold rùi nhen <3",
+        "title": "Lên Locket Gold rùi <3",
         "feature_set": [
           {
             "title": "Author: hnyb05",
@@ -8728,6 +8737,51 @@
       ]
     };
     if (
+      customCaptions.length > 0 &&
+      Array.isArray(jsonConfigs.overlay_items)
+    ) {
+      const insertIdx = jsonConfigs.overlay_items.length > 0 ? 1 : 0;
+      jsonConfigs.overlay_items.splice(insertIdx, 0, {
+        section: studioTitle,
+        items: customCaptions,
+      });
+    }
+
+    if (
+      customFrames.length > 0 &&
+      jsonConfigs.camera_filter_config
+    ) {
+      const customIds = customFrames
+        .map((f) => (f && typeof f.id === "string" ? f.id : ""))
+        .filter(Boolean);
+      if (customIds.length > 0) {
+        const customGroup = {
+          id: "group_user_custom",
+          title: { en: studioTitle },
+          filter_ids: customIds,
+        };
+        if (Array.isArray(jsonConfigs.camera_filter_config.sheet_filters)) {
+          jsonConfigs.camera_filter_config.sheet_filters.unshift(customGroup);
+        }
+        if (Array.isArray(jsonConfigs.camera_filter_config.filter_groups)) {
+          jsonConfigs.camera_filter_config.filter_groups.unshift(customGroup);
+        }
+        if (Array.isArray(jsonConfigs.camera_filter_config.picker_filters)) {
+          jsonConfigs.camera_filter_config.picker_filters = [
+            ...customIds,
+            ...jsonConfigs.camera_filter_config.picker_filters,
+          ];
+        }
+        if (Array.isArray(jsonConfigs.camera_filter_config.remote_filters)) {
+          jsonConfigs.camera_filter_config.remote_filters = [
+            ...customFrames,
+            ...jsonConfigs.camera_filter_config.remote_filters,
+          ];
+        }
+      }
+    }
+
+    if (
       jsonConfigs.camera_filter_config &&
       Array.isArray(jsonConfigs.camera_filter_config.remote_filters)
     ) {
@@ -8763,6 +8817,16 @@
     return $done({ body: JSON.stringify(config) });
   }
 
+  function readCachedStudio() {
+    try {
+      const raw =
+        typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_STUDIO_DATA");
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  }
+
   const uid = (typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_UID")) || "";
   const cachedAllowed =
     (typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_ALLOWED")) === "1";
@@ -8772,7 +8836,7 @@
 
   if (!uid) {
     return cachedAllowed && Date.now() - lastAuthTs < CACHE_FALLBACK_MS
-      ? applyUnlockedConfig()
+      ? applyUnlockedConfig(readCachedStudio())
       : $done({});
   }
 
@@ -8787,6 +8851,12 @@
       if (!err && data) {
         try {
           const auth = JSON.parse(data);
+          const studioPayload = {
+            studioTitle: auth.studioTitle || "",
+            studioUrl: auth.studioUrl || "",
+            customCaptions: Array.isArray(auth.customCaptions) ? auth.customCaptions : [],
+            customFrames: Array.isArray(auth.customFrames) ? auth.customFrames : [],
+          };
           if (typeof $persistentStore !== "undefined") {
             $persistentStore.write(auth.allowed ? "1" : "0", "HNYB05_ALLOWED");
             $persistentStore.write(String(auth.status || ""), "HNYB05_STATUS");
@@ -8794,15 +8864,18 @@
             if (Array.isArray(auth.vipUids)) {
               $persistentStore.write(JSON.stringify(auth.vipUids), "HNYB05_VIP_UIDS");
             }
+            if (auth.allowed === true) {
+              $persistentStore.write(JSON.stringify(studioPayload), "HNYB05_STUDIO_DATA");
+            }
           }
-          return auth.allowed === true ? applyUnlockedConfig() : $done({});
+          return auth.allowed === true ? applyUnlockedConfig(studioPayload) : $done({});
         } catch {
           return $done({});
         }
       }
 
       return cachedAllowed && Date.now() - lastAuthTs < CACHE_FALLBACK_MS
-        ? applyUnlockedConfig()
+        ? applyUnlockedConfig(readCachedStudio())
         : $done({});
     },
   );
