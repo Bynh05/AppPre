@@ -121,6 +121,9 @@
       "typing_indicators_enabled": "true",
       "unsend_message_enabled": "true",
       "reply_prototype_enabled": "true",
+      "reply_moment_photo_enabled": "true",
+      "streak_reminders": "true",
+      "join_community_enabled": "true",
       "messages_integration": "true",
       "conversations_enabled": "true",
       "fetch_moments_in_conversation": "true",
@@ -7650,15 +7653,6 @@
           "cutout_percentage": 100
         },
         "photos_button_enabled": true
-      },
-      "widget_frame_event": {
-        "uid": "blank",
-        "url": "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
-        "use_local_time_zone": true,
-        "placement": "below",
-        "start_at": "2020-01-01T00:00:00",
-        "end_at": "2099-12-31T23:59:59",
-        "custom_widget_frames": []
       },
       "journal_settings": {
         "debug_menu_enabled": false,
