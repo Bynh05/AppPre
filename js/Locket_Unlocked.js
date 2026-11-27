@@ -133,7 +133,21 @@
       "time_travel_rewind_v2_enabled": "true",
       "conversation_drafts_enabled": "1",
       "calendar_delete_moment_enabled": "true",
-      "calendar_rewind_enabled": "false",
+      "calendar_rewind_enabled": "true",
+      "audio_enabled": "true",
+      "audio_playback_enabled": "true",
+      "video_audio_enabled": "true",
+      "chat_read_receipts": "true",
+      "chat_read_receipts_mark_as_delivered_extension": "true",
+      "chat_mode": "5",
+      "rollcall_memories_streaks_enabled": "true",
+      "year_of_the_horse_icon_enabled": "true",
+      "camera_timer_enabled": "true",
+      "self_timer_enabled": "true",
+      "camera_themes": "[\"sakura\",\"snowflake\",\"sunset\",\"surfboard\",\"ootd\"]",
+      "camera_themes_config": "{\"enabled\":true,\"themes\":[\"sakura\",\"snowflake\",\"sunset\",\"surfboard\",\"ootd\"]}",
+      "camera_video_recording": "{\"default\":{\"maximum_duration\":60000,\"size\":1080,\"file_type\":\"mp4\",\"video_codec\":\"h265\"},\"gold\":{\"maximum_duration\":60000,\"size\":1080,\"file_type\":\"mp4\",\"video_codec\":\"h265\"}}",
+      "time_travel_rewind_v2_share_templates": "{\"templates\":[\"rounded_square\",\"grid_collage\",\"cutout_collage\",\"rounded_square_bold\",\"wall_calendar\"],\"random_order\":false}",
       "locket_yearbook_story_sharing_encouraged": "true",
       "rollcall_enabled": "true",
       "rollcall_comment_actions": "true",
@@ -219,7 +233,18 @@
         "custom_widget_frames": "enabled",
         "camera_filter_sheet": "enabled",
         "streak_recovery": "enabled",
-        "streak_reminders": "enabled"
+        "streak_reminders": "enabled",
+        "audio": "enabled",
+        "audio_playback": "enabled",
+        "video_audio": "enabled",
+        "camera_timer": "enabled",
+        "self_timer": "enabled",
+        "timer": "enabled",
+        "camera_themes": "enabled",
+        "ai_generation": "enabled",
+        "locket_ai_generation": "enabled",
+        "holiday_filters": "enabled",
+        "widget_frames": "enabled"
       },
       "upsell_features": {
         "app_icon_picker": false,
@@ -270,6 +295,11 @@
         "telephoto": true,
         "srgb": true,
         "lanczos": true,
+        "timer": true,
+        "timer_button": true,
+        "self_timer": true,
+        "countdown": true,
+        "countdown_timer": true,
         "quality_mbps": 0.6
       },
       "camera_roll": {
@@ -296,6 +326,241 @@
         "open_sheet_immediately": true,
         "sheet_filters": [
           {
+            "id": "group_dazz_cam",
+            "title": {
+              "en": "Dazz Cam 🎞️"
+            },
+            "filter_ids": [
+              "dazz_cpm35",
+              "dazz_classic_u",
+              "dazz_d_half",
+              "dazz_inst_c",
+              "dazz_135_ne"
+            ]
+          },
+          {
+            "id": "group_camera_filters",
+            "title": {
+              "en": "Camera Filter 🎞️"
+            },
+            "filter_ids": [
+              "photo_effect_co_dien",
+              "photo_effect_dem_xanh",
+              "photo_effect_film",
+              "photo_effect_matte",
+              "photo_effect_nhat",
+              "photo_effect_pastel",
+              "photo_effect_teal_va_cam",
+              "photo_effect_trang_den",
+              "photo_effect_tuong_phan",
+              "photo_effect_am_ap",
+              "photo_effect_mat_lanh",
+              "photo_effect_am_mat_ong",
+              "photo_effect_blue_hour",
+              "photo_effect_film_nau",
+              "photo_effect_hong_milk",
+              "photo_effect_lo_sang_film",
+              "photo_effect_matcha",
+              "photo_effect_tim_y2k",
+              "photo_effect_xanh_film"
+            ]
+          },
+          {
+            "id": "group_photobooth",
+            "title": {
+              "en": "PhotoBooth 4 ảnh 📸"
+            },
+            "filter_ids": [
+              "pb_khung4_scrapbook_do",
+              "pb_khung4_inspire_arena",
+              "pb_khung4_my_vault",
+              "pb_khung4_cham_bi",
+              "pb_khung4_cham_bi_den",
+              "pb_khung4_likeble",
+              "pb_khung4_razzle",
+              "pb_khung4_your_title",
+              "pb_khung4_soulmate_film",
+              "pb_khung4_mimi",
+              "pb_khung4_fairy_film",
+              "pb_khung4_foto_lush",
+              "pb_khung4_photoism",
+              "pb_khung4_twinkle_booth",
+              "pb_khung4_equinox",
+              "pb_khung4_i_love_you",
+              "pb_khung4_film",
+              "pb_khung4_dream_cream",
+              "frame_berry_days",
+              "pb_khung4_scrapbook",
+              "pb_khung4_so_cool",
+              "frame_happy_snap",
+              "frame_sky_diary",
+              "photobooth_4cut",
+              "pb_holo_4cut",
+              "pb_scrapbook_ripped_4cut",
+              "pb_ripped_paper_4cut",
+              "pb_denim_ripped_2x2",
+              "pb_khung2_khi_tinh_iu_den"
+            ]
+          },
+          {
+            "id": "group_photobooth_2",
+            "title": {
+              "en": "Hai Đứa Một Khung 💞"
+            },
+            "filter_ids": [
+              "pb_khung2_soulmate",
+              "pb_khung2_love_postcard",
+              "pb_khung2_camera_pic",
+              "pb_khung2_anhdep",
+              "pb_khung2_anhco",
+              "pb_khung2_di_choi_thoi",
+              "pb_khung2_thelove",
+              "pb_khung2_outfit",
+              "pb_khung2_thu_tinh",
+              "pb_khung2_len_do",
+              "pb_khung2_tin_nong",
+              "pb_khung2_thang_ngay_ben_nhau",
+              "pb_khung2_may_anh",
+              "pb_khung2_ki_niem",
+              "pb_khung2_khi_e_vang",
+              "pb_khung2_dieu_em_uoc_ao"
+            ]
+          },
+          {
+            "id": "group_photobooth_3",
+            "title": {
+              "en": "Bộ Ba Bá Đạo 🤟"
+            },
+            "filter_ids": [
+              "pb_khung3_photo_iphone",
+              "pb_khung3_polaroid2",
+              "pb_khung3_da_bao",
+              "pb_khung3_mothaiba",
+              "pb_khung3_ngay_mai_tuoi_sang",
+              "pb_khung3_memory",
+              "pb_khung3_Vinyl",
+              "pb_khung3_Polaroid",
+              "pb_khung3_photodump",
+              "pb_khung3_love_so_much",
+              "pb_khung3_hoi_ban_than",
+              "pb_khung3_hen_nha"
+            ]
+          },
+          {
+            "id": "group_single_frame",
+            "title": {
+              "en": "Khung Viền Hot Trend 🖼️"
+            },
+            "filter_ids": [
+              "pb_khung1_locket_camera",
+              "pb_khung1_spotifyPC",
+              "pb_khung1_spotify_hong",
+              "pb_khung1_camfuji",
+              "pb_khung1_menu_ios",
+              "pb_khung1_iphone",
+              "pb_khung1_tivi",
+              "pb_khung1_the_gioi_cua_2_ta",
+              "pb_khung1_Camera_iPhone",
+              "pb_khung1_khong_buong",
+              "pb_khung1_selflove",
+              "pb_khung1_thu_tinh",
+              "pb_khung1_ptb",
+              "pb_khung1_oi_tinh_yeu",
+              "pb_khung1_card",
+              "pb_khung1_love_e_nhiu",
+              "pb_khung1_ki_niem_tuoi_dep",
+              "pb_khung1_ins",
+              "pb_khung1_hoi_chieu_troi_mua",
+              "pb_khung1_dia",
+              "pb_khung1_chuong_cuoi",
+              "pb_khung1_maytinh",
+              "pb_khung1_mat_tin_hieu"
+            ]
+          },
+          {
+            "id": "group_trend",
+            "title": {
+              "en": "Trend Hot 🔥"
+            },
+            "filter_ids": [
+              "weekday_depth",
+              "pb_khung1_chua_som",
+              "trend_bang_tin_khan",
+              "trend_ve_giu_xe",
+              "trend_vo_hoc_sinh",
+              "trend_giao_vien_cham_bai",
+              "trend_nhiem_vu_hom_nay_la",
+              "trend_hoa_don_di_choi",
+              "trend_binh_luan_duoc_ghim",
+              "trend_camera_an_ninh",
+              "trend_thong_bao_ngan_hang",
+              "trend_chat_nhom_leak"
+            ]
+          },
+          {
+            "id": "group_trend_comment_tiktok",
+            "title": {
+              "en": "Cư Dân Mạng Nói Gì 💬"
+            },
+            "filter_ids": [
+              "cmt_siuu",
+              "cmt_sontung",
+              "cmt_locket",
+              "sticker_binh_luan_minh_tue",
+              "cmt_xinh",
+              "cmt_posst",
+              "cmt_flash",
+              "cmt_duanma",
+              "cmt_dichup",
+              "cmt_chuano",
+              "cmt_anhdim"
+            ]
+          },
+          {
+            "id": "group_goofy",
+            "title": {
+              "en": "Rạp Xiếc Trung Ương 🤪"
+            },
+            "filter_ids": [
+              "pb_khung3_fruit",
+              "pb_khung1_mona_lisa",
+              "pb_khung2_monkey",
+              "pb_khung1_messi",
+              "pb_khung1_ronaldo_cup",
+              "pb_khung2_cuoi_vespa",
+              "pb_khung1_anh_tho",
+              "pb_khung1_the_hinh",
+              "pb_khung1_matmoc"
+            ]
+          },
+          {
+            "id": "group_frames",
+            "title": {
+              "en": "Khung Xinh Hết Cứu 🎀"
+            },
+            "filter_ids": [
+              "pb_khung1_cute",
+              "pb_khung1_luffy",
+              "frame_classic_pb",
+              "khung_hello_kitty_pastel_ngot_ngao",
+              "khung_hello_kitty_hong_pastel",
+              "khung_pastel_vien_ren",
+              "khung_hoa_pastel_vien_xanh_xinh",
+              "khung_spiderred",
+              "khung_khong_gian_xanh_pastel",
+              "khung_ngoi_sao_hong_pastel",
+              "khung_pastel_so_hai_cau",
+              "khung_shin_chan",
+              "khung_anh_hellokitty_v_sao",
+              "khung_xanh_tay_sao_vang",
+              "sinh_nhat_hello_kitty",
+              "pb_single_y2k_silver_holo",
+              "pb_single_denim_ripped",
+              "pb_single_film_nostalgia",
+              "photobooth_cute"
+            ]
+          },
+          {
             "id": "group_hot_ai_3d",
             "title": {
               "en": "AI 3D Hot 🔥"
@@ -314,49 +579,6 @@
               "fortnite_llama",
               "watercolor_art",
               "golden_hour"
-            ]
-          },
-          {
-            "id": "group_photobooth",
-            "title": {
-              "en": "Khung & Photobooth 📸"
-            },
-            "filter_ids": [
-              "frame_berry_days",
-              "frame_happy_snap",
-              "frame_sky_diary",
-              "photobooth_4cut",
-              "photobooth_cute",
-              "pb_holo_4cut",
-              "pb_scrapbook_ripped_4cut",
-              "pb_ripped_paper_4cut",
-              "pb_denim_ripped_2x2"
-            ]
-          },
-          {
-            "id": "group_frames",
-            "title": {
-              "en": "Khung Viền & Hot Trend 🖼️"
-            },
-            "filter_ids": [
-              "frame_classic_pb",
-              "sticker_binh_luan_minh_tue",
-              "cmt_locket",
-              "khung_hello_kitty_pastel_ngot_ngao",
-              "khung_hello_kitty_hong_pastel",
-              "khung_pastel_vien_ren",
-              "khung_hoa_pastel_vien_xanh_xinh",
-              "khung_spiderred",
-              "khung_khong_gian_xanh_pastel",
-              "khung_ngoi_sao_hong_pastel",
-              "khung_pastel_so_hai_cau",
-              "khung_shin_chan",
-              "khung_anh_hellokitty_v_sao",
-              "khung_xanh_tay_sao_vang",
-              "sinh_nhat_hello_kitty",
-              "pb_single_y2k_silver_holo",
-              "pb_single_denim_ripped",
-              "pb_single_film_nostalgia"
             ]
           },
           {
@@ -445,7 +667,7 @@
               "bearded",
               "leprechaun",
               "lucky_face",
-              "sweet_hearts",
+              "sweat_hearts",
               "elf_cutout",
               "santa_cutout",
               "frosty"
@@ -454,6 +676,241 @@
         ],
         "filter_groups": [
           {
+            "id": "group_dazz_cam",
+            "title": {
+              "en": "Dazz Cam 🎞️"
+            },
+            "filter_ids": [
+              "dazz_cpm35",
+              "dazz_classic_u",
+              "dazz_d_half",
+              "dazz_inst_c",
+              "dazz_135_ne"
+            ]
+          },
+          {
+            "id": "group_camera_filters",
+            "title": {
+              "en": "Camera Filter 🎞️"
+            },
+            "filter_ids": [
+              "photo_effect_co_dien",
+              "photo_effect_dem_xanh",
+              "photo_effect_film",
+              "photo_effect_matte",
+              "photo_effect_nhat",
+              "photo_effect_pastel",
+              "photo_effect_teal_va_cam",
+              "photo_effect_trang_den",
+              "photo_effect_tuong_phan",
+              "photo_effect_am_ap",
+              "photo_effect_mat_lanh",
+              "photo_effect_am_mat_ong",
+              "photo_effect_blue_hour",
+              "photo_effect_film_nau",
+              "photo_effect_hong_milk",
+              "photo_effect_lo_sang_film",
+              "photo_effect_matcha",
+              "photo_effect_tim_y2k",
+              "photo_effect_xanh_film"
+            ]
+          },
+          {
+            "id": "group_photobooth",
+            "title": {
+              "en": "PhotoBooth 4 ảnh 📸"
+            },
+            "filter_ids": [
+              "pb_khung4_scrapbook_do",
+              "pb_khung4_inspire_arena",
+              "pb_khung4_my_vault",
+              "pb_khung4_cham_bi",
+              "pb_khung4_cham_bi_den",
+              "pb_khung4_likeble",
+              "pb_khung4_razzle",
+              "pb_khung4_your_title",
+              "pb_khung4_soulmate_film",
+              "pb_khung4_mimi",
+              "pb_khung4_fairy_film",
+              "pb_khung4_foto_lush",
+              "pb_khung4_photoism",
+              "pb_khung4_twinkle_booth",
+              "pb_khung4_equinox",
+              "pb_khung4_i_love_you",
+              "pb_khung4_film",
+              "pb_khung4_dream_cream",
+              "frame_berry_days",
+              "pb_khung4_scrapbook",
+              "pb_khung4_so_cool",
+              "frame_happy_snap",
+              "frame_sky_diary",
+              "photobooth_4cut",
+              "pb_holo_4cut",
+              "pb_scrapbook_ripped_4cut",
+              "pb_ripped_paper_4cut",
+              "pb_denim_ripped_2x2",
+              "pb_khung2_khi_tinh_iu_den"
+            ]
+          },
+          {
+            "id": "group_photobooth_2",
+            "title": {
+              "en": "Hai Đứa Một Khung 💞"
+            },
+            "filter_ids": [
+              "pb_khung2_soulmate",
+              "pb_khung2_love_postcard",
+              "pb_khung2_camera_pic",
+              "pb_khung2_anhdep",
+              "pb_khung2_anhco",
+              "pb_khung2_di_choi_thoi",
+              "pb_khung2_thelove",
+              "pb_khung2_outfit",
+              "pb_khung2_thu_tinh",
+              "pb_khung2_len_do",
+              "pb_khung2_tin_nong",
+              "pb_khung2_thang_ngay_ben_nhau",
+              "pb_khung2_may_anh",
+              "pb_khung2_ki_niem",
+              "pb_khung2_khi_e_vang",
+              "pb_khung2_dieu_em_uoc_ao"
+            ]
+          },
+          {
+            "id": "group_photobooth_3",
+            "title": {
+              "en": "Bộ Ba Bá Đạo 🤟"
+            },
+            "filter_ids": [
+              "pb_khung3_photo_iphone",
+              "pb_khung3_polaroid2",
+              "pb_khung3_da_bao",
+              "pb_khung3_mothaiba",
+              "pb_khung3_ngay_mai_tuoi_sang",
+              "pb_khung3_memory",
+              "pb_khung3_Vinyl",
+              "pb_khung3_Polaroid",
+              "pb_khung3_photodump",
+              "pb_khung3_love_so_much",
+              "pb_khung3_hoi_ban_than",
+              "pb_khung3_hen_nha"
+            ]
+          },
+          {
+            "id": "group_single_frame",
+            "title": {
+              "en": "Khung Viền Hot Trend 🖼️"
+            },
+            "filter_ids": [
+              "pb_khung1_locket_camera",
+              "pb_khung1_spotifyPC",
+              "pb_khung1_spotify_hong",
+              "pb_khung1_camfuji",
+              "pb_khung1_menu_ios",
+              "pb_khung1_iphone",
+              "pb_khung1_tivi",
+              "pb_khung1_the_gioi_cua_2_ta",
+              "pb_khung1_Camera_iPhone",
+              "pb_khung1_khong_buong",
+              "pb_khung1_selflove",
+              "pb_khung1_thu_tinh",
+              "pb_khung1_ptb",
+              "pb_khung1_oi_tinh_yeu",
+              "pb_khung1_card",
+              "pb_khung1_love_e_nhiu",
+              "pb_khung1_ki_niem_tuoi_dep",
+              "pb_khung1_ins",
+              "pb_khung1_hoi_chieu_troi_mua",
+              "pb_khung1_dia",
+              "pb_khung1_chuong_cuoi",
+              "pb_khung1_maytinh",
+              "pb_khung1_mat_tin_hieu"
+            ]
+          },
+          {
+            "id": "group_trend",
+            "title": {
+              "en": "Trend Hot 🔥"
+            },
+            "filter_ids": [
+              "weekday_depth",
+              "pb_khung1_chua_som",
+              "trend_bang_tin_khan",
+              "trend_ve_giu_xe",
+              "trend_vo_hoc_sinh",
+              "trend_giao_vien_cham_bai",
+              "trend_nhiem_vu_hom_nay_la",
+              "trend_hoa_don_di_choi",
+              "trend_binh_luan_duoc_ghim",
+              "trend_camera_an_ninh",
+              "trend_thong_bao_ngan_hang",
+              "trend_chat_nhom_leak"
+            ]
+          },
+          {
+            "id": "group_trend_comment_tiktok",
+            "title": {
+              "en": "Cư Dân Mạng Nói Gì 💬"
+            },
+            "filter_ids": [
+              "cmt_siuu",
+              "cmt_sontung",
+              "cmt_locket",
+              "sticker_binh_luan_minh_tue",
+              "cmt_xinh",
+              "cmt_posst",
+              "cmt_flash",
+              "cmt_duanma",
+              "cmt_dichup",
+              "cmt_chuano",
+              "cmt_anhdim"
+            ]
+          },
+          {
+            "id": "group_goofy",
+            "title": {
+              "en": "Rạp Xiếc Trung Ương 🤪"
+            },
+            "filter_ids": [
+              "pb_khung3_fruit",
+              "pb_khung1_mona_lisa",
+              "pb_khung2_monkey",
+              "pb_khung1_messi",
+              "pb_khung1_ronaldo_cup",
+              "pb_khung2_cuoi_vespa",
+              "pb_khung1_anh_tho",
+              "pb_khung1_the_hinh",
+              "pb_khung1_matmoc"
+            ]
+          },
+          {
+            "id": "group_frames",
+            "title": {
+              "en": "Khung Xinh Hết Cứu 🎀"
+            },
+            "filter_ids": [
+              "pb_khung1_cute",
+              "pb_khung1_luffy",
+              "frame_classic_pb",
+              "khung_hello_kitty_pastel_ngot_ngao",
+              "khung_hello_kitty_hong_pastel",
+              "khung_pastel_vien_ren",
+              "khung_hoa_pastel_vien_xanh_xinh",
+              "khung_spiderred",
+              "khung_khong_gian_xanh_pastel",
+              "khung_ngoi_sao_hong_pastel",
+              "khung_pastel_so_hai_cau",
+              "khung_shin_chan",
+              "khung_anh_hellokitty_v_sao",
+              "khung_xanh_tay_sao_vang",
+              "sinh_nhat_hello_kitty",
+              "pb_single_y2k_silver_holo",
+              "pb_single_denim_ripped",
+              "pb_single_film_nostalgia",
+              "photobooth_cute"
+            ]
+          },
+          {
             "id": "group_hot_ai_3d",
             "title": {
               "en": "AI 3D Hot 🔥"
@@ -472,49 +929,6 @@
               "fortnite_llama",
               "watercolor_art",
               "golden_hour"
-            ]
-          },
-          {
-            "id": "group_photobooth",
-            "title": {
-              "en": "Khung & Photobooth 📸"
-            },
-            "filter_ids": [
-              "frame_berry_days",
-              "frame_happy_snap",
-              "frame_sky_diary",
-              "photobooth_4cut",
-              "photobooth_cute",
-              "pb_holo_4cut",
-              "pb_scrapbook_ripped_4cut",
-              "pb_ripped_paper_4cut",
-              "pb_denim_ripped_2x2"
-            ]
-          },
-          {
-            "id": "group_frames",
-            "title": {
-              "en": "Khung Viền & Hot Trend 🖼️"
-            },
-            "filter_ids": [
-              "frame_classic_pb",
-              "sticker_binh_luan_minh_tue",
-              "cmt_locket",
-              "khung_hello_kitty_pastel_ngot_ngao",
-              "khung_hello_kitty_hong_pastel",
-              "khung_pastel_vien_ren",
-              "khung_hoa_pastel_vien_xanh_xinh",
-              "khung_spiderred",
-              "khung_khong_gian_xanh_pastel",
-              "khung_ngoi_sao_hong_pastel",
-              "khung_pastel_so_hai_cau",
-              "khung_shin_chan",
-              "khung_anh_hellokitty_v_sao",
-              "khung_xanh_tay_sao_vang",
-              "sinh_nhat_hello_kitty",
-              "pb_single_y2k_silver_holo",
-              "pb_single_denim_ripped",
-              "pb_single_film_nostalgia"
             ]
           },
           {
@@ -603,7 +1017,7 @@
               "bearded",
               "leprechaun",
               "lucky_face",
-              "sweet_hearts",
+              "sweat_hearts",
               "elf_cutout",
               "santa_cutout",
               "frosty"
@@ -611,53 +1025,145 @@
           }
         ],
         "picker_filters": [
-          "okay_wig",
-          "influencer",
-          "looks_maxxing",
-          "toothless",
-          "bye_brows",
-          "bowling_ball",
-          "blonde_bleached",
-          "beard",
-          "bob_cut",
-          "buns",
-          "tatted",
-          "mohawk",
-          "braces",
-          "slimed",
-          "princess",
-          "disco_lights",
-          "cash_money",
-          "happy_birthday",
-          "cutesy",
-          "sticker_face",
-          "flower_crown",
-          "love_bug",
-          "wedding",
-          "cowboy_cowgirl",
-          "giraffe",
-          "clown",
-          "easter_bunney_cutout",
-          "easter_chick_cutout",
-          "bearded",
-          "leprechaun",
-          "lucky_face",
-          "sweet_hearts",
-          "elf_cutout",
-          "santa_cutout",
-          "frosty",
+          "dazz_cpm35",
+          "dazz_classic_u",
+          "dazz_d_half",
+          "dazz_inst_c",
+          "dazz_135_ne",
+          "photo_effect_co_dien",
+          "photo_effect_dem_xanh",
+          "photo_effect_film",
+          "photo_effect_matte",
+          "photo_effect_nhat",
+          "photo_effect_pastel",
+          "photo_effect_teal_va_cam",
+          "photo_effect_trang_den",
+          "photo_effect_tuong_phan",
+          "photo_effect_am_ap",
+          "photo_effect_mat_lanh",
+          "photo_effect_am_mat_ong",
+          "photo_effect_blue_hour",
+          "photo_effect_film_nau",
+          "photo_effect_hong_milk",
+          "photo_effect_lo_sang_film",
+          "photo_effect_matcha",
+          "photo_effect_tim_y2k",
+          "photo_effect_xanh_film",
+          "pb_khung4_scrapbook_do",
+          "pb_khung4_inspire_arena",
+          "pb_khung4_my_vault",
+          "pb_khung4_cham_bi",
+          "pb_khung4_cham_bi_den",
+          "pb_khung4_likeble",
+          "pb_khung4_razzle",
+          "pb_khung4_your_title",
+          "pb_khung4_soulmate_film",
+          "pb_khung4_mimi",
+          "pb_khung4_fairy_film",
+          "pb_khung4_foto_lush",
+          "pb_khung4_photoism",
+          "pb_khung4_twinkle_booth",
+          "pb_khung4_equinox",
+          "pb_khung4_i_love_you",
+          "pb_khung4_film",
+          "pb_khung4_dream_cream",
           "frame_berry_days",
+          "pb_khung4_scrapbook",
+          "pb_khung4_so_cool",
           "frame_happy_snap",
           "frame_sky_diary",
           "photobooth_4cut",
-          "photobooth_cute",
           "pb_holo_4cut",
           "pb_scrapbook_ripped_4cut",
           "pb_ripped_paper_4cut",
           "pb_denim_ripped_2x2",
-          "frame_classic_pb",
-          "sticker_binh_luan_minh_tue",
+          "pb_khung2_khi_tinh_iu_den",
+          "pb_khung2_soulmate",
+          "pb_khung2_love_postcard",
+          "pb_khung2_camera_pic",
+          "pb_khung2_anhdep",
+          "pb_khung2_anhco",
+          "pb_khung2_di_choi_thoi",
+          "pb_khung2_thelove",
+          "pb_khung2_outfit",
+          "pb_khung2_thu_tinh",
+          "pb_khung2_len_do",
+          "pb_khung2_tin_nong",
+          "pb_khung2_thang_ngay_ben_nhau",
+          "pb_khung2_may_anh",
+          "pb_khung2_ki_niem",
+          "pb_khung2_khi_e_vang",
+          "pb_khung2_dieu_em_uoc_ao",
+          "pb_khung3_photo_iphone",
+          "pb_khung3_polaroid2",
+          "pb_khung3_da_bao",
+          "pb_khung3_mothaiba",
+          "pb_khung3_ngay_mai_tuoi_sang",
+          "pb_khung3_memory",
+          "pb_khung3_Vinyl",
+          "pb_khung3_Polaroid",
+          "pb_khung3_photodump",
+          "pb_khung3_love_so_much",
+          "pb_khung3_hoi_ban_than",
+          "pb_khung3_hen_nha",
+          "pb_khung1_locket_camera",
+          "pb_khung1_spotifyPC",
+          "pb_khung1_spotify_hong",
+          "pb_khung1_camfuji",
+          "pb_khung1_menu_ios",
+          "pb_khung1_iphone",
+          "pb_khung1_tivi",
+          "pb_khung1_the_gioi_cua_2_ta",
+          "pb_khung1_Camera_iPhone",
+          "pb_khung1_khong_buong",
+          "pb_khung1_selflove",
+          "pb_khung1_thu_tinh",
+          "pb_khung1_ptb",
+          "pb_khung1_oi_tinh_yeu",
+          "pb_khung1_card",
+          "pb_khung1_love_e_nhiu",
+          "pb_khung1_ki_niem_tuoi_dep",
+          "pb_khung1_ins",
+          "pb_khung1_hoi_chieu_troi_mua",
+          "pb_khung1_dia",
+          "pb_khung1_chuong_cuoi",
+          "pb_khung1_maytinh",
+          "pb_khung1_mat_tin_hieu",
+          "weekday_depth",
+          "pb_khung1_chua_som",
+          "trend_bang_tin_khan",
+          "trend_ve_giu_xe",
+          "trend_vo_hoc_sinh",
+          "trend_giao_vien_cham_bai",
+          "trend_nhiem_vu_hom_nay_la",
+          "trend_hoa_don_di_choi",
+          "trend_binh_luan_duoc_ghim",
+          "trend_camera_an_ninh",
+          "trend_thong_bao_ngan_hang",
+          "trend_chat_nhom_leak",
+          "cmt_siuu",
+          "cmt_sontung",
           "cmt_locket",
+          "sticker_binh_luan_minh_tue",
+          "cmt_xinh",
+          "cmt_posst",
+          "cmt_flash",
+          "cmt_duanma",
+          "cmt_dichup",
+          "cmt_chuano",
+          "cmt_anhdim",
+          "pb_khung3_fruit",
+          "pb_khung1_mona_lisa",
+          "pb_khung2_monkey",
+          "pb_khung1_messi",
+          "pb_khung1_ronaldo_cup",
+          "pb_khung2_cuoi_vespa",
+          "pb_khung1_anh_tho",
+          "pb_khung1_the_hinh",
+          "pb_khung1_matmoc",
+          "pb_khung1_cute",
+          "pb_khung1_luffy",
+          "frame_classic_pb",
           "khung_hello_kitty_pastel_ngot_ngao",
           "khung_hello_kitty_hong_pastel",
           "khung_pastel_vien_ren",
@@ -673,7 +1179,7 @@
           "pb_single_y2k_silver_holo",
           "pb_single_denim_ripped",
           "pb_single_film_nostalgia",
-          "locket",
+          "photobooth_cute",
           "fireworks",
           "harry_potter",
           "minecraft",
@@ -682,20 +1188,235 @@
           "ocean_underwater",
           "ufo_alien",
           "sweat_hearts",
-          "rose_flower",
-          "shrek_ogre",
-          "superhero_cape",
-          "spooky_ghost",
-          "pirate_hat",
           "volcano_lava",
           "rain_storm",
           "fortnite_llama",
           "watercolor_art",
           "golden_hour",
+          "okay_wig",
+          "influencer",
+          "looks_maxxing",
+          "toothless",
+          "bye_brows",
+          "spooky_ghost",
+          "cute_zombie",
+          "bowling_ball",
+          "blonde_bleached",
+          "beard",
+          "bob_cut",
+          "buns",
+          "tatted",
+          "mohawk",
+          "braces",
+          "rose_flower",
           "jungle_leaf",
-          "cute_zombie"
+          "locket",
+          "slimed",
+          "princess",
+          "disco_lights",
+          "cash_money",
+          "happy_birthday",
+          "cutesy",
+          "sticker_face",
+          "flower_crown",
+          "love_bug",
+          "wedding",
+          "cowboy_cowgirl",
+          "giraffe",
+          "clown",
+          "shrek_ogre",
+          "superhero_cape",
+          "pirate_hat",
+          "easter_bunney_cutout",
+          "easter_chick_cutout",
+          "bearded",
+          "leprechaun",
+          "lucky_face",
+          "elf_cutout",
+          "santa_cutout",
+          "frosty"
         ],
         "remote_filters": [
+          {
+            "uid": "dazz_cpm35",
+            "id": "dazz_cpm35",
+            "name": "CPM35",
+            "category": "Dazz Cam",
+            "prompt": "dazz_cpm35",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+            "tintColor": "#FF8C3B",
+            "colors": [
+              "#FF8C3B",
+              "#B83B1D"
+            ],
+            "captureButtonColors": [
+              "#FF8C3B",
+              "#B83B1D"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
+              "sfSymbol": "camera.aperture",
+              "symbol": "camera.aperture",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "dazz_classic_u",
+            "id": "dazz_classic_u",
+            "name": "Classic U",
+            "category": "Dazz Cam",
+            "prompt": "dazz_classic_u",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+            "tintColor": "#2BB3A3",
+            "colors": [
+              "#2BB3A3",
+              "#124E5B"
+            ],
+            "captureButtonColors": [
+              "#2BB3A3",
+              "#124E5B"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
+              "sfSymbol": "camera.aperture",
+              "symbol": "camera.aperture",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "dazz_d_half",
+            "id": "dazz_d_half",
+            "name": "D Half",
+            "category": "Dazz Cam",
+            "prompt": "dazz_d_half",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+            "tintColor": "#F6AD55",
+            "colors": [
+              "#F6AD55",
+              "#9C4221"
+            ],
+            "captureButtonColors": [
+              "#F6AD55",
+              "#9C4221"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
+              "sfSymbol": "rectangle.split.2x1.fill",
+              "symbol": "rectangle.split.2x1.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "dazz_inst_c",
+            "id": "dazz_inst_c",
+            "name": "Inst C",
+            "category": "Dazz Cam",
+            "prompt": "dazz_inst_c",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+            "tintColor": "#E6DAC8",
+            "colors": [
+              "#E6DAC8",
+              "#E0631F"
+            ],
+            "captureButtonColors": [
+              "#E6DAC8",
+              "#E0631F"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
+              "sfSymbol": "photo.on.rectangle.angled",
+              "symbol": "photo.on.rectangle.angled",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "dazz_135_ne",
+            "id": "dazz_135_ne",
+            "name": "135 NE",
+            "category": "Dazz Cam",
+            "prompt": "dazz_135_ne",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+            "tintColor": "#E53E3E",
+            "colors": [
+              "#E53E3E",
+              "#5B1228"
+            ],
+            "captureButtonColors": [
+              "#E53E3E",
+              "#5B1228"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
+              "sfSymbol": "film.fill",
+              "symbol": "film.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
           {
             "uid": "rose_flower",
             "id": "rose_flower",
@@ -2339,6 +3060,4434 @@
             "referenceImages": [],
             "type": "normal",
             "filterType": "cutout"
+          },
+          {
+            "uid": "pb_khung4_scrapbook_do",
+            "id": "pb_khung4_scrapbook_do",
+            "name": "Scrapbook Đỏ",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_scrapbook_do",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+            "tintColor": "#671C2A",
+            "colors": [
+              "#671C2A",
+              "#E7E1D8"
+            ],
+            "captureButtonColors": [
+              "#671C2A",
+              "#E7E1D8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook_do.png",
+              "sfSymbol": "square.grid.2x2.fill",
+              "symbol": "square.grid.2x2.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_inspire_arena",
+            "id": "pb_khung4_inspire_arena",
+            "name": "Inspire Arena",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_inspire_arena",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+            "tintColor": "#267BB5",
+            "colors": [
+              "#267BB5",
+              "#B7D8F0"
+            ],
+            "captureButtonColors": [
+              "#267BB5",
+              "#B7D8F0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_inspire_arena.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_my_vault",
+            "id": "pb_khung4_my_vault",
+            "name": "My Vault",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_my_vault",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+            "tintColor": "#292929",
+            "colors": [
+              "#292929",
+              "#C4C8CE"
+            ],
+            "captureButtonColors": [
+              "#292929",
+              "#C4C8CE"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_my_vault.png",
+              "sfSymbol": "bolt.fill",
+              "symbol": "bolt.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_cham_bi",
+            "id": "pb_khung4_cham_bi",
+            "name": "Chấm Bi",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_cham_bi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+            "tintColor": "#694A4B",
+            "colors": [
+              "#694A4B",
+              "#F0D4DE"
+            ],
+            "captureButtonColors": [
+              "#694A4B",
+              "#F0D4DE"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi.png",
+              "sfSymbol": "circle.grid.2x2.fill",
+              "symbol": "circle.grid.2x2.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_cham_bi_den",
+            "id": "pb_khung4_cham_bi_den",
+            "name": "Chấm Bi Đen",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_cham_bi_den",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+            "tintColor": "#242424",
+            "colors": [
+              "#242424",
+              "#ECECEC"
+            ],
+            "captureButtonColors": [
+              "#242424",
+              "#ECECEC"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_cham_bi_den.png",
+              "sfSymbol": "circle.grid.2x2.fill",
+              "symbol": "circle.grid.2x2.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_likeble",
+            "id": "pb_khung4_likeble",
+            "name": "Likeble",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_likeble",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+            "tintColor": "#B39C57",
+            "colors": [
+              "#B39C57",
+              "#F6ECD0"
+            ],
+            "captureButtonColors": [
+              "#B39C57",
+              "#F6ECD0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_likeble.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_razzle",
+            "id": "pb_khung4_razzle",
+            "name": "Razzle Dazzle",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_razzle",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+            "tintColor": "#806044",
+            "colors": [
+              "#806044",
+              "#D3BB91"
+            ],
+            "captureButtonColors": [
+              "#806044",
+              "#D3BB91"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_razzle.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_your_title",
+            "id": "pb_khung4_your_title",
+            "name": "Your Title",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_your_title",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+            "tintColor": "#60462D",
+            "colors": [
+              "#60462D",
+              "#ECD1A2"
+            ],
+            "captureButtonColors": [
+              "#60462D",
+              "#ECD1A2"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_your_title.png",
+              "sfSymbol": "newspaper.fill",
+              "symbol": "newspaper.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_soulmate_film",
+            "id": "pb_khung4_soulmate_film",
+            "name": "Soulmate Film",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_soulmate_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+            "tintColor": "#8C2937",
+            "colors": [
+              "#8C2937",
+              "#F1E7DB"
+            ],
+            "captureButtonColors": [
+              "#8C2937",
+              "#F1E7DB"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_soulmate_film.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_mimi",
+            "id": "pb_khung4_mimi",
+            "name": "Mimi Say Cheese",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_mimi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+            "tintColor": "#5D8DBA",
+            "colors": [
+              "#5D8DBA",
+              "#F6B8D3"
+            ],
+            "captureButtonColors": [
+              "#5D8DBA",
+              "#F6B8D3"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_mimi.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_fairy_film",
+            "id": "pb_khung4_fairy_film",
+            "name": "Fairy Film",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_fairy_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+            "tintColor": "#344F7B",
+            "colors": [
+              "#344F7B",
+              "#D9BF94"
+            ],
+            "captureButtonColors": [
+              "#344F7B",
+              "#D9BF94"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_fairy_film.png",
+              "sfSymbol": "envelope.fill",
+              "symbol": "envelope.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_foto_lush",
+            "id": "pb_khung4_foto_lush",
+            "name": "Foto Lush",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_foto_lush",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+            "tintColor": "#6F6A63",
+            "colors": [
+              "#6F6A63",
+              "#E9DFCA"
+            ],
+            "captureButtonColors": [
+              "#6F6A63",
+              "#E9DFCA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_foto_lush.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_photoism",
+            "id": "pb_khung4_photoism",
+            "name": "Photoism",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_photoism",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+            "tintColor": "#242424",
+            "colors": [
+              "#242424",
+              "#B9A2BC"
+            ],
+            "captureButtonColors": [
+              "#242424",
+              "#B9A2BC"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_photoism.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_twinkle_booth",
+            "id": "pb_khung4_twinkle_booth",
+            "name": "Twinkle Booth",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_twinkle_booth",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+            "tintColor": "#674323",
+            "colors": [
+              "#674323",
+              "#EAD298"
+            ],
+            "captureButtonColors": [
+              "#674323",
+              "#EAD298"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_twinkle_booth.png",
+              "sfSymbol": "star.fill",
+              "symbol": "star.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_equinox",
+            "id": "pb_khung4_equinox",
+            "name": "Equinox Studio",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_equinox",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+            "tintColor": "#174C9B",
+            "colors": [
+              "#174C9B",
+              "#B62432"
+            ],
+            "captureButtonColors": [
+              "#174C9B",
+              "#B62432"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_equinox.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_i_love_you",
+            "id": "pb_khung4_i_love_you",
+            "name": "I Love You",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_i_love_you",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+            "tintColor": "#795D3D",
+            "colors": [
+              "#795D3D",
+              "#DCCBAA"
+            ],
+            "captureButtonColors": [
+              "#795D3D",
+              "#DCCBAA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_i_love_you.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_film",
+            "id": "pb_khung4_film",
+            "name": "Cuộn Phim 35mm",
+            "category": "Photobooth",
+            "prompt": "pb_khung4_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+            "tintColor": "#1C1C1C",
+            "colors": [
+              "#1C1C1C",
+              "#B8B8B8"
+            ],
+            "captureButtonColors": [
+              "#1C1C1C",
+              "#B8B8B8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_film.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_dream_cream",
+            "id": "pb_khung4_dream_cream",
+            "name": "Denim & Kem",
+            "category": "Photobooth",
+            "prompt": "pb_khung4_dream_cream",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+            "tintColor": "#405978",
+            "colors": [
+              "#405978",
+              "#F3E7D7"
+            ],
+            "captureButtonColors": [
+              "#405978",
+              "#F3E7D7"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_dream_cream.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_scrapbook",
+            "id": "pb_khung4_scrapbook",
+            "name": "Scrapbook Kỷ Niệm",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_scrapbook",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+            "tintColor": "#C9B08A",
+            "colors": [
+              "#C9B08A",
+              "#EADCC2"
+            ],
+            "captureButtonColors": [
+              "#C9B08A",
+              "#EADCC2"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_scrapbook.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung4_so_cool",
+            "id": "pb_khung4_so_cool",
+            "name": "So Cool",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung4_so_cool",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+            "tintColor": "#D85C9A",
+            "colors": [
+              "#D85C9A",
+              "#F3B9D2"
+            ],
+            "captureButtonColors": [
+              "#D85C9A",
+              "#F3B9D2"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung4_so_cool.png",
+              "sfSymbol": "square.grid.2x2",
+              "symbol": "square.grid.2x2",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_siuu",
+            "id": "cmt_siuu",
+            "name": "Ronaldo SIUUU",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_siuu",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+            "tintColor": "#344B5B",
+            "colors": [
+              "#344B5B",
+              "#E84B60"
+            ],
+            "captureButtonColors": [
+              "#344B5B",
+              "#E84B60"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_siuu.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_sontung",
+            "id": "cmt_sontung",
+            "name": "Sơn Tùng MTP",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_sontung",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+            "tintColor": "#344C47",
+            "colors": [
+              "#344C47",
+              "#DF5B69"
+            ],
+            "captureButtonColors": [
+              "#344C47",
+              "#DF5B69"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_sontung.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_xinh",
+            "id": "cmt_xinh",
+            "name": "Ai Cho Xinh Vậy",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_xinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+            "tintColor": "#F43F5E",
+            "colors": [
+              "#F43F5E",
+              "#FB7185"
+            ],
+            "captureButtonColors": [
+              "#F43F5E",
+              "#FB7185"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_xinh.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_posst",
+            "id": "cmt_posst",
+            "name": "Tấm Cuối Đáng Đăng",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_posst",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+            "tintColor": "#EF4444",
+            "colors": [
+              "#EF4444",
+              "#60A5FA"
+            ],
+            "captureButtonColors": [
+              "#EF4444",
+              "#60A5FA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_posst.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_flash",
+            "id": "cmt_flash",
+            "name": "Flash Đổi Nhân Cách",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_flash",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+            "tintColor": "#06B6D4",
+            "colors": [
+              "#06B6D4",
+              "#EF4444"
+            ],
+            "captureButtonColors": [
+              "#06B6D4",
+              "#EF4444"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_flash.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_duanma",
+            "id": "cmt_duanma",
+            "name": "Dự án ma",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_duanma",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+            "tintColor": "#EF4444",
+            "colors": [
+              "#EF4444",
+              "#60A5FA"
+            ],
+            "captureButtonColors": [
+              "#EF4444",
+              "#60A5FA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_duanma.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_dichup",
+            "id": "cmt_dichup",
+            "name": "Chụp 3 Tấm Lựa 3 Tiếng",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_dichup",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+            "tintColor": "#06B6D4",
+            "colors": [
+              "#06B6D4",
+              "#FB7185"
+            ],
+            "captureButtonColors": [
+              "#06B6D4",
+              "#FB7185"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_dichup.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_chuano",
+            "id": "cmt_chuano",
+            "name": "Đừng Khinh Thường Hoa Chưa Nở",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_chuano",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+            "tintColor": "#06B6D4",
+            "colors": [
+              "#06B6D4",
+              "#EF4444"
+            ],
+            "captureButtonColors": [
+              "#06B6D4",
+              "#EF4444"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_chuano.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "cmt_anhdim",
+            "id": "cmt_anhdim",
+            "name": "Bạn Thân Giữ Ảnh Dìm",
+            "category": "Trend Comment TikTok",
+            "prompt": "cmt_anhdim",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+            "tintColor": "#EF4444",
+            "colors": [
+              "#EF4444",
+              "#22D3EE"
+            ],
+            "captureButtonColors": [
+              "#EF4444",
+              "#22D3EE"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/cmt_anhdim.png",
+              "sfSymbol": "bubble.left.fill",
+              "symbol": "bubble.left.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_soulmate",
+            "id": "pb_khung2_soulmate",
+            "name": "Soulmate",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_soulmate",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+            "tintColor": "#353535",
+            "colors": [
+              "#353535",
+              "#D6CBB8"
+            ],
+            "captureButtonColors": [
+              "#353535",
+              "#D6CBB8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_soulmate.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_monkey",
+            "id": "pb_khung2_monkey",
+            "name": "Đôi Bạn Monkey",
+            "category": "Khung 2 ảnh",
+            "prompt": "pb_khung2_monkey",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+            "tintColor": "#514D29",
+            "colors": [
+              "#514D29",
+              "#A77B56"
+            ],
+            "captureButtonColors": [
+              "#514D29",
+              "#A77B56"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_monkey.png",
+              "sfSymbol": "face.smiling.fill",
+              "symbol": "face.smiling.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_love_postcard",
+            "id": "pb_khung2_love_postcard",
+            "name": "Love Postcard",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_love_postcard",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+            "tintColor": "#673C52",
+            "colors": [
+              "#673C52",
+              "#DAB8C8"
+            ],
+            "captureButtonColors": [
+              "#673C52",
+              "#DAB8C8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_love_postcard.png",
+              "sfSymbol": "envelope.fill",
+              "symbol": "envelope.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_camera_pic",
+            "id": "pb_khung2_camera_pic",
+            "name": "Camera Kỷ Niệm",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_camera_pic",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+            "tintColor": "#11182C",
+            "colors": [
+              "#11182C",
+              "#CBD0D9"
+            ],
+            "captureButtonColors": [
+              "#11182C",
+              "#CBD0D9"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_camera_pic.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_anhdep",
+            "id": "pb_khung2_anhdep",
+            "name": "Hai Tấm Xinh Xinh",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_anhdep",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+            "tintColor": "#7F0000",
+            "colors": [
+              "#7F0000",
+              "#D9A0A0"
+            ],
+            "captureButtonColors": [
+              "#7F0000",
+              "#D9A0A0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhdep.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_anhco",
+            "id": "pb_khung2_anhco",
+            "name": "Ký Ức Polaroid",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_anhco",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+            "tintColor": "#303030",
+            "colors": [
+              "#303030",
+              "#D6D3CE"
+            ],
+            "captureButtonColors": [
+              "#303030",
+              "#D6D3CE"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_anhco.png",
+              "sfSymbol": "photo.on.rectangle",
+              "symbol": "photo.on.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_di_choi_thoi",
+            "id": "pb_khung2_di_choi_thoi",
+            "name": "Hẹn Nhau Đi Chơi",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_di_choi_thoi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+            "tintColor": "#9B292D",
+            "colors": [
+              "#9B292D",
+              "#EAD4B5"
+            ],
+            "captureButtonColors": [
+              "#9B292D",
+              "#EAD4B5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_di_choi_thoi.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_len_do",
+            "id": "pb_khung2_len_do",
+            "name": "Lên Đồ Đi Chơi",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_len_do",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+            "tintColor": "#300020",
+            "colors": [
+              "#300020",
+              "#B01060"
+            ],
+            "captureButtonColors": [
+              "#300020",
+              "#B01060"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_len_do.png",
+              "sfSymbol": "tshirt.fill",
+              "symbol": "tshirt.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_tin_nong",
+            "id": "pb_khung2_tin_nong",
+            "name": "Tin Nóng Hôm Nay",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_tin_nong",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+            "tintColor": "#E0C080",
+            "colors": [
+              "#E0C080",
+              "#F0D8B0"
+            ],
+            "captureButtonColors": [
+              "#E0C080",
+              "#F0D8B0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_tin_nong.png",
+              "sfSymbol": "newspaper.fill",
+              "symbol": "newspaper.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_thang_ngay_ben_nhau",
+            "id": "pb_khung2_thang_ngay_ben_nhau",
+            "name": "Tháng Ngày Bên Nhau",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_thang_ngay_ben_nhau",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+            "tintColor": "#C00000",
+            "colors": [
+              "#C00000",
+              "#F02000"
+            ],
+            "captureButtonColors": [
+              "#C00000",
+              "#F02000"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thang_ngay_ben_nhau.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_may_anh",
+            "id": "pb_khung2_may_anh",
+            "name": "Góc Máy Thanh Xuân",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_may_anh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+            "tintColor": "#77776F",
+            "colors": [
+              "#77776F",
+              "#D1CEC1"
+            ],
+            "captureButtonColors": [
+              "#77776F",
+              "#D1CEC1"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_may_anh.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_ki_niem",
+            "id": "pb_khung2_ki_niem",
+            "name": "Kỷ Niệm Chúng Mình",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_ki_niem",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+            "tintColor": "#E080F0",
+            "colors": [
+              "#E080F0",
+              "#F0B0F0"
+            ],
+            "captureButtonColors": [
+              "#E080F0",
+              "#F0B0F0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_ki_niem.png",
+              "sfSymbol": "photo.on.rectangle",
+              "symbol": "photo.on.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_khi_tinh_iu_den",
+            "id": "pb_khung2_khi_tinh_iu_den",
+            "name": "Khi Tình Yêu Đến",
+            "category": "PhotoBooth 4 ảnh",
+            "prompt": "pb_khung2_khi_tinh_iu_den",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+            "tintColor": "#0040E0",
+            "colors": [
+              "#0040E0",
+              "#70A0F0"
+            ],
+            "captureButtonColors": [
+              "#0040E0",
+              "#70A0F0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_tinh_iu_den.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_khi_e_vang",
+            "id": "pb_khung2_khi_e_vang",
+            "name": "Khi Em Vắng Anh",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_khi_e_vang",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+            "tintColor": "#252525",
+            "colors": [
+              "#252525",
+              "#E5E5E5"
+            ],
+            "captureButtonColors": [
+              "#252525",
+              "#E5E5E5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_khi_e_vang.png",
+              "sfSymbol": "heart",
+              "symbol": "heart",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_dieu_em_uoc_ao",
+            "id": "pb_khung2_dieu_em_uoc_ao",
+            "name": "Điều Em Ước Ao",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_dieu_em_uoc_ao",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+            "tintColor": "#B66ABB",
+            "colors": [
+              "#B66ABB",
+              "#EAD4E9"
+            ],
+            "captureButtonColors": [
+              "#B66ABB",
+              "#EAD4E9"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_dieu_em_uoc_ao.png",
+              "sfSymbol": "star.fill",
+              "symbol": "star.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_thelove",
+            "id": "pb_khung2_thelove",
+            "name": "The Love Times",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_thelove",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+            "tintColor": "#111111",
+            "colors": [
+              "#111111",
+              "#EAEAEA"
+            ],
+            "captureButtonColors": [
+              "#111111",
+              "#EAEAEA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thelove.png",
+              "sfSymbol": "newspaper.fill",
+              "symbol": "newspaper.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_outfit",
+            "id": "pb_khung2_outfit",
+            "name": "Outfit Check",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_outfit",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+            "tintColor": "#2C2C2C",
+            "colors": [
+              "#2C2C2C",
+              "#D8C6A3"
+            ],
+            "captureButtonColors": [
+              "#2C2C2C",
+              "#D8C6A3"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_outfit.png",
+              "sfSymbol": "tshirt.fill",
+              "symbol": "tshirt.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_thu_tinh",
+            "id": "pb_khung2_thu_tinh",
+            "name": "Thư Tình Ngọt Ngào",
+            "category": "PhotoBooth 2 ảnh",
+            "prompt": "pb_khung2_thu_tinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+            "tintColor": "#F3C7CF",
+            "colors": [
+              "#F3C7CF",
+              "#F8E4E8"
+            ],
+            "captureButtonColors": [
+              "#F3C7CF",
+              "#F8E4E8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_thu_tinh.png",
+              "sfSymbol": "envelope.fill",
+              "symbol": "envelope.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_photo_iphone",
+            "id": "pb_khung3_photo_iphone",
+            "name": "Photo iPhone",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_photo_iphone",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+            "tintColor": "#CAC9D2",
+            "colors": [
+              "#CAC9D2",
+              "#EE7472"
+            ],
+            "captureButtonColors": [
+              "#CAC9D2",
+              "#EE7472"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photo_iphone.png",
+              "sfSymbol": "photo.on.rectangle.angled",
+              "symbol": "photo.on.rectangle.angled",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_polaroid2",
+            "id": "pb_khung3_polaroid2",
+            "name": "Polaroid Kỷ Niệm",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_polaroid2",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+            "tintColor": "#32312E",
+            "colors": [
+              "#32312E",
+              "#B99A7F"
+            ],
+            "captureButtonColors": [
+              "#32312E",
+              "#B99A7F"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_polaroid2.png",
+              "sfSymbol": "photo.stack.fill",
+              "symbol": "photo.stack.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_fruit",
+            "id": "pb_khung3_fruit",
+            "name": "Hội Trái Cây",
+            "category": "Khung 3 ảnh",
+            "prompt": "pb_khung3_fruit",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+            "tintColor": "#E97B91",
+            "colors": [
+              "#E97B91",
+              "#B9D89F"
+            ],
+            "captureButtonColors": [
+              "#E97B91",
+              "#B9D89F"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_fruit.png",
+              "sfSymbol": "face.smiling.fill",
+              "symbol": "face.smiling.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_da_bao",
+            "id": "pb_khung3_da_bao",
+            "name": "Da Báo",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_da_bao",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+            "tintColor": "#694C35",
+            "colors": [
+              "#694C35",
+              "#8C2834"
+            ],
+            "captureButtonColors": [
+              "#694C35",
+              "#8C2834"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_da_bao.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_mothaiba",
+            "id": "pb_khung3_mothaiba",
+            "name": "Một Hai Ba",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_mothaiba",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+            "tintColor": "#7296BE",
+            "colors": [
+              "#7296BE",
+              "#EACAD8"
+            ],
+            "captureButtonColors": [
+              "#7296BE",
+              "#EACAD8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_mothaiba.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_ngay_mai_tuoi_sang",
+            "id": "pb_khung3_ngay_mai_tuoi_sang",
+            "name": "Ngày Mai Tươi Sáng",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_ngay_mai_tuoi_sang",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+            "tintColor": "#242424",
+            "colors": [
+              "#242424",
+              "#D9D9D9"
+            ],
+            "captureButtonColors": [
+              "#242424",
+              "#D9D9D9"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_ngay_mai_tuoi_sang.png",
+              "sfSymbol": "sun.max.fill",
+              "symbol": "sun.max.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_memory",
+            "id": "pb_khung3_memory",
+            "name": "Memory Lane",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_memory",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+            "tintColor": "#103020",
+            "colors": [
+              "#103020",
+              "#508060"
+            ],
+            "captureButtonColors": [
+              "#103020",
+              "#508060"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_memory.png",
+              "sfSymbol": "photo.on.rectangle",
+              "symbol": "photo.on.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_Vinyl",
+            "id": "pb_khung3_Vinyl",
+            "name": "Vinyl Memories 🎵",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_Vinyl",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+            "tintColor": "#581C24",
+            "colors": [
+              "#581C24",
+              "#A33A42"
+            ],
+            "captureButtonColors": [
+              "#581C24",
+              "#A33A42"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Vinyl.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_Polaroid",
+            "id": "pb_khung3_Polaroid",
+            "name": "Polaroid Nhật Ký 📸",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_Polaroid",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+            "tintColor": "#DC2626",
+            "colors": [
+              "#DC2626",
+              "#F5F5F5"
+            ],
+            "captureButtonColors": [
+              "#DC2626",
+              "#F5F5F5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_Polaroid.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_photodump",
+            "id": "pb_khung3_photodump",
+            "name": "Photo Dump Hôm Nay ✨",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_photodump",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+            "tintColor": "#C49A6C",
+            "colors": [
+              "#C49A6C",
+              "#F5DEB3"
+            ],
+            "captureButtonColors": [
+              "#C49A6C",
+              "#F5DEB3"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_photodump.png",
+              "sfSymbol": "photo.on.rectangle",
+              "symbol": "photo.on.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_hoi_ban_than",
+            "id": "pb_khung3_hoi_ban_than",
+            "name": "Hội Bạn Thân",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_hoi_ban_than",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+            "tintColor": "#A0B060",
+            "colors": [
+              "#A0B060",
+              "#F0C0C0"
+            ],
+            "captureButtonColors": [
+              "#A0B060",
+              "#F0C0C0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hoi_ban_than.png",
+              "sfSymbol": "person.3.fill",
+              "symbol": "person.3.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_hen_nha",
+            "id": "pb_khung3_hen_nha",
+            "name": "Hẹn Nhau Nha",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_hen_nha",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+            "tintColor": "#E0B0B0",
+            "colors": [
+              "#E0B0B0",
+              "#F0A0A0"
+            ],
+            "captureButtonColors": [
+              "#E0B0B0",
+              "#F0A0A0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_hen_nha.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung3_love_so_much",
+            "id": "pb_khung3_love_so_much",
+            "name": "Love So Much",
+            "category": "PhotoBooth 3 ảnh",
+            "prompt": "pb_khung3_love_so_much",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+            "tintColor": "#7A0010",
+            "colors": [
+              "#7A0010",
+              "#C0182B"
+            ],
+            "captureButtonColors": [
+              "#7A0010",
+              "#C0182B"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung3_love_so_much.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_mona_lisa",
+            "id": "pb_khung1_mona_lisa",
+            "name": "Mona Lisa",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_mona_lisa",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+            "tintColor": "#5D512B",
+            "colors": [
+              "#5D512B",
+              "#B5A06A"
+            ],
+            "captureButtonColors": [
+              "#5D512B",
+              "#B5A06A"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mona_lisa.png",
+              "sfSymbol": "person.crop.rectangle.fill",
+              "symbol": "person.crop.rectangle.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_locket_camera",
+            "id": "pb_khung1_locket_camera",
+            "name": "Locket Camera",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_locket_camera",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+            "tintColor": "#202020",
+            "colors": [
+              "#202020",
+              "#E7B439"
+            ],
+            "captureButtonColors": [
+              "#202020",
+              "#E7B439"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_locket_camera.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_spotifyPC",
+            "id": "pb_khung1_spotifyPC",
+            "name": "Spotify PC",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_spotifyPC",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+            "tintColor": "#23282B",
+            "colors": [
+              "#23282B",
+              "#22C55E"
+            ],
+            "captureButtonColors": [
+              "#23282B",
+              "#22C55E"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotifyPC.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_spotify_hong",
+            "id": "pb_khung1_spotify_hong",
+            "name": "Spotify Hồng",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_spotify_hong",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+            "tintColor": "#C83978",
+            "colors": [
+              "#C83978",
+              "#F5A8CC"
+            ],
+            "captureButtonColors": [
+              "#C83978",
+              "#F5A8CC"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_spotify_hong.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_camfuji",
+            "id": "pb_khung1_camfuji",
+            "name": "Fuji Film",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_camfuji",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+            "tintColor": "#161616",
+            "colors": [
+              "#161616",
+              "#EAA32B"
+            ],
+            "captureButtonColors": [
+              "#161616",
+              "#EAA32B"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_camfuji.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_messi",
+            "id": "pb_khung1_messi",
+            "name": "Messi Cúp",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_messi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+            "tintColor": "#258599",
+            "colors": [
+              "#258599",
+              "#D5AF49"
+            ],
+            "captureButtonColors": [
+              "#258599",
+              "#D5AF49"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_messi.png",
+              "sfSymbol": "trophy.fill",
+              "symbol": "trophy.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_ronaldo_cup",
+            "id": "pb_khung1_ronaldo_cup",
+            "name": "Ronaldo Cúp",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_ronaldo_cup",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+            "tintColor": "#A82432",
+            "colors": [
+              "#A82432",
+              "#C8CED3"
+            ],
+            "captureButtonColors": [
+              "#A82432",
+              "#C8CED3"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ronaldo_cup.png",
+              "sfSymbol": "trophy.fill",
+              "symbol": "trophy.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_menu_ios",
+            "id": "pb_khung1_menu_ios",
+            "name": "Menu iOS",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_menu_ios",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+            "tintColor": "#36343D",
+            "colors": [
+              "#36343D",
+              "#96909F"
+            ],
+            "captureButtonColors": [
+              "#36343D",
+              "#96909F"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_menu_ios.png",
+              "sfSymbol": "square.and.arrow.up",
+              "symbol": "square.and.arrow.up",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung2_cuoi_vespa",
+            "id": "pb_khung2_cuoi_vespa",
+            "name": "Cưới Vespa",
+            "category": "Khung 2 ảnh",
+            "prompt": "pb_khung2_cuoi_vespa",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+            "tintColor": "#159AAF",
+            "colors": [
+              "#159AAF",
+              "#F5E4CB"
+            ],
+            "captureButtonColors": [
+              "#159AAF",
+              "#F5E4CB"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung2_cuoi_vespa.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_the_hinh",
+            "id": "pb_khung1_the_hinh",
+            "name": "Thể Hình 💪",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_the_hinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+            "tintColor": "#6E4634",
+            "colors": [
+              "#6E4634",
+              "#B58B6C"
+            ],
+            "captureButtonColors": [
+              "#6E4634",
+              "#B58B6C"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_hinh.png",
+              "sfSymbol": "dumbbell.fill",
+              "symbol": "dumbbell.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_iphone",
+            "id": "pb_khung1_iphone",
+            "name": "Now Playing",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_iphone",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+            "tintColor": "#303A43",
+            "colors": [
+              "#303A43",
+              "#9AA9B2"
+            ],
+            "captureButtonColors": [
+              "#303A43",
+              "#9AA9B2"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_iphone.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_tivi",
+            "id": "pb_khung1_tivi",
+            "name": "Ký Ức Màn Hình",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_tivi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+            "tintColor": "#686962",
+            "colors": [
+              "#686962",
+              "#CBC4AD"
+            ],
+            "captureButtonColors": [
+              "#686962",
+              "#CBC4AD"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_tivi.png",
+              "sfSymbol": "tv.fill",
+              "symbol": "tv.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_the_gioi_cua_2_ta",
+            "id": "pb_khung1_the_gioi_cua_2_ta",
+            "name": "Thế Giới Của Hai Ta",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_the_gioi_cua_2_ta",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+            "tintColor": "#222222",
+            "colors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "captureButtonColors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_the_gioi_cua_2_ta.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_selflove",
+            "id": "pb_khung1_selflove",
+            "name": "Self Love Club",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_selflove",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+            "tintColor": "#383530",
+            "colors": [
+              "#383530",
+              "#DED6C8"
+            ],
+            "captureButtonColors": [
+              "#383530",
+              "#DED6C8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_selflove.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_ptb",
+            "id": "pb_khung1_ptb",
+            "name": "MIXTAPE VOIL.1",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_ptb",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+            "tintColor": "#222222",
+            "colors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "captureButtonColors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ptb.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_oi_tinh_yeu",
+            "id": "pb_khung1_oi_tinh_yeu",
+            "name": "Ôi, Tình Yêu!",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_oi_tinh_yeu",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+            "tintColor": "#90F000",
+            "colors": [
+              "#90F000",
+              "#306000"
+            ],
+            "captureButtonColors": [
+              "#90F000",
+              "#306000"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_oi_tinh_yeu.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_card",
+            "id": "pb_khung1_card",
+            "name": "Thẻ Thanh Xuân",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_card",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+            "tintColor": "#103060",
+            "colors": [
+              "#103060",
+              "#4060A0"
+            ],
+            "captureButtonColors": [
+              "#103060",
+              "#4060A0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_card.png",
+              "sfSymbol": "person.crop.rectangle",
+              "symbol": "person.crop.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_love_e_nhiu",
+            "id": "pb_khung1_love_e_nhiu",
+            "name": "Love Em Nhiều",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_love_e_nhiu",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+            "tintColor": "#E77C30",
+            "colors": [
+              "#E77C30",
+              "#CA58B5"
+            ],
+            "captureButtonColors": [
+              "#E77C30",
+              "#CA58B5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_love_e_nhiu.png",
+              "sfSymbol": "heart.fill",
+              "symbol": "heart.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_ki_niem_tuoi_dep",
+            "id": "pb_khung1_ki_niem_tuoi_dep",
+            "name": "Kỷ Niệm Tươi Đẹp",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_ki_niem_tuoi_dep",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+            "tintColor": "#252525",
+            "colors": [
+              "#252525",
+              "#DAD7CE"
+            ],
+            "captureButtonColors": [
+              "#252525",
+              "#DAD7CE"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ki_niem_tuoi_dep.png",
+              "sfSymbol": "photo.on.rectangle",
+              "symbol": "photo.on.rectangle",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_ins",
+            "id": "pb_khung1_ins",
+            "name": "Instagram Moments",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_ins",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+            "tintColor": "#343434",
+            "colors": [
+              "#343434",
+              "#F05B65"
+            ],
+            "captureButtonColors": [
+              "#343434",
+              "#F05B65"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_ins.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_hoi_chieu_troi_mua",
+            "id": "pb_khung1_hoi_chieu_troi_mua",
+            "name": "Hồi Chiều Trời Mưa",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_hoi_chieu_troi_mua",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+            "tintColor": "#C02030",
+            "colors": [
+              "#C02030",
+              "#E0D0B0"
+            ],
+            "captureButtonColors": [
+              "#C02030",
+              "#E0D0B0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_hoi_chieu_troi_mua.png",
+              "sfSymbol": "cloud.rain.fill",
+              "symbol": "cloud.rain.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_dia",
+            "id": "pb_khung1_dia",
+            "name": "Chiếc Đĩa Kỷ Niệm",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_dia",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+            "tintColor": "#8B641E",
+            "colors": [
+              "#8B641E",
+              "#D4C6A1"
+            ],
+            "captureButtonColors": [
+              "#8B641E",
+              "#D4C6A1"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_dia.png",
+              "sfSymbol": "opticaldisc",
+              "symbol": "opticaldisc",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_chuong_cuoi",
+            "id": "pb_khung1_chuong_cuoi",
+            "name": "Chương Cuối Thanh Xuân",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_chuong_cuoi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+            "tintColor": "#515151",
+            "colors": [
+              "#515151",
+              "#D1D1D1"
+            ],
+            "captureButtonColors": [
+              "#515151",
+              "#D1D1D1"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chuong_cuoi.png",
+              "sfSymbol": "book.closed.fill",
+              "symbol": "book.closed.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_maytinh",
+            "id": "pb_khung1_maytinh",
+            "name": "Màn Hình Hoài Niệm",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_maytinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+            "tintColor": "#706050",
+            "colors": [
+              "#706050",
+              "#C0A080"
+            ],
+            "captureButtonColors": [
+              "#706050",
+              "#C0A080"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_maytinh.png",
+              "sfSymbol": "desktopcomputer",
+              "symbol": "desktopcomputer",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_mat_tin_hieu",
+            "id": "pb_khung1_mat_tin_hieu",
+            "name": "No Signal",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_mat_tin_hieu",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+            "tintColor": "#402060",
+            "colors": [
+              "#402060",
+              "#8050B0"
+            ],
+            "captureButtonColors": [
+              "#402060",
+              "#8050B0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_mat_tin_hieu.png",
+              "sfSymbol": "antenna.radiowaves.left.and.right",
+              "symbol": "antenna.radiowaves.left.and.right",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_Camera_iPhone",
+            "id": "pb_khung1_Camera_iPhone",
+            "name": "Camera iPhone",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_Camera_iPhone",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+            "tintColor": "#7A1F1F",
+            "colors": [
+              "#7A1F1F",
+              "#C84B4B"
+            ],
+            "captureButtonColors": [
+              "#7A1F1F",
+              "#C84B4B"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_Camera_iPhone.png",
+              "sfSymbol": "camera.fill",
+              "symbol": "camera.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_khong_buong",
+            "id": "pb_khung1_khong_buong",
+            "name": "Không Buông",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_khong_buong",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+            "tintColor": "#355C7D",
+            "colors": [
+              "#355C7D",
+              "#6C8FA8"
+            ],
+            "captureButtonColors": [
+              "#355C7D",
+              "#6C8FA8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_khong_buong.png",
+              "sfSymbol": "music.note",
+              "symbol": "music.note",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "weekday_depth",
+            "id": "weekday_depth",
+            "name": "Thứ Sau Chủ Thể",
+            "category": "Trend",
+            "prompt": "weekday_depth",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+            "tintColor": "#243B53",
+            "colors": [
+              "#243B53",
+              "#FFFFFF"
+            ],
+            "captureButtonColors": [
+              "#243B53",
+              "#FFFFFF"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/weekday_depth.png",
+              "sfSymbol": "calendar",
+              "symbol": "calendar",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_chua_som",
+            "id": "pb_khung1_chua_som",
+            "name": "Chửa Sớm",
+            "category": "Trend",
+            "prompt": "pb_khung1_chua_som",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+            "tintColor": "#252525",
+            "colors": [
+              "#252525",
+              "#D8C6B1"
+            ],
+            "captureButtonColors": [
+              "#252525",
+              "#D8C6B1"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_chua_som.png",
+              "sfSymbol": "text.bubble.fill",
+              "symbol": "text.bubble.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_bang_tin_khan",
+            "id": "trend_bang_tin_khan",
+            "name": "Bảng Tin Khẩn",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_bang_tin_khan",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+            "tintColor": "#D62828",
+            "colors": [
+              "#D62828",
+              "#1D4ED8"
+            ],
+            "captureButtonColors": [
+              "#D62828",
+              "#1D4ED8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_bang_tin_khan.png",
+              "sfSymbol": "newspaper.fill",
+              "symbol": "newspaper.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_ve_giu_xe",
+            "id": "trend_ve_giu_xe",
+            "name": "Vé Gửi Xe",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_ve_giu_xe",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+            "tintColor": "#6F8750",
+            "colors": [
+              "#6F8750",
+              "#CDDAB6"
+            ],
+            "captureButtonColors": [
+              "#6F8750",
+              "#CDDAB6"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_ve_giu_xe.png",
+              "sfSymbol": "car.fill",
+              "symbol": "car.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_vo_hoc_sinh",
+            "id": "trend_vo_hoc_sinh",
+            "name": "Vở Học Sinh",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_vo_hoc_sinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+            "tintColor": "#D94742",
+            "colors": [
+              "#D94742",
+              "#E9C85E"
+            ],
+            "captureButtonColors": [
+              "#D94742",
+              "#E9C85E"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_vo_hoc_sinh.png",
+              "sfSymbol": "book.closed.fill",
+              "symbol": "book.closed.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_giao_vien_cham_bai",
+            "id": "trend_giao_vien_cham_bai",
+            "name": "Giáo Viên Chấm Bài",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_giao_vien_cham_bai",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+            "tintColor": "#C83232",
+            "colors": [
+              "#C83232",
+              "#F2C7BD"
+            ],
+            "captureButtonColors": [
+              "#C83232",
+              "#F2C7BD"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_giao_vien_cham_bai.png",
+              "sfSymbol": "pencil",
+              "symbol": "pencil",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_nhiem_vu_hom_nay_la",
+            "id": "trend_nhiem_vu_hom_nay_la",
+            "name": "Nhiệm Vụ Hôm Nay",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_nhiem_vu_hom_nay_la",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+            "tintColor": "#65846A",
+            "colors": [
+              "#65846A",
+              "#F0E3CC"
+            ],
+            "captureButtonColors": [
+              "#65846A",
+              "#F0E3CC"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_nhiem_vu_hom_nay_la.png",
+              "sfSymbol": "checkmark.square.fill",
+              "symbol": "checkmark.square.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_hoa_don_di_choi",
+            "id": "trend_hoa_don_di_choi",
+            "name": "Hóa Đơn Đi Chơi",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_hoa_don_di_choi",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+            "tintColor": "#A67C52",
+            "colors": [
+              "#A67C52",
+              "#E5E7EB"
+            ],
+            "captureButtonColors": [
+              "#A67C52",
+              "#E5E7EB"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_hoa_don_di_choi.png",
+              "sfSymbol": "doc.text.fill",
+              "symbol": "doc.text.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_binh_luan_duoc_ghim",
+            "id": "trend_binh_luan_duoc_ghim",
+            "name": "Bình Luận Được Ghim",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_binh_luan_duoc_ghim",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+            "tintColor": "#9CA3AF",
+            "colors": [
+              "#9CA3AF",
+              "#111827"
+            ],
+            "captureButtonColors": [
+              "#9CA3AF",
+              "#111827"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_binh_luan_duoc_ghim.png",
+              "sfSymbol": "pin.fill",
+              "symbol": "pin.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_camera_an_ninh",
+            "id": "trend_camera_an_ninh",
+            "name": "Camera An Ninh",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_camera_an_ninh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+            "tintColor": "#374151",
+            "colors": [
+              "#374151",
+              "#EF4444"
+            ],
+            "captureButtonColors": [
+              "#374151",
+              "#EF4444"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_camera_an_ninh.png",
+              "sfSymbol": "video.fill",
+              "symbol": "video.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_thong_bao_ngan_hang",
+            "id": "trend_thong_bao_ngan_hang",
+            "name": "Thông Báo Ngân Hàng",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_thong_bao_ngan_hang",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+            "tintColor": "#16A34A",
+            "colors": [
+              "#16A34A",
+              "#E5E7EB"
+            ],
+            "captureButtonColors": [
+              "#16A34A",
+              "#E5E7EB"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_thong_bao_ngan_hang.png",
+              "sfSymbol": "creditcard.fill",
+              "symbol": "creditcard.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "trend_chat_nhom_leak",
+            "id": "trend_chat_nhom_leak",
+            "name": "Chat Nhóm Leak",
+            "category": "Khung 1 ảnh",
+            "prompt": "trend_chat_nhom_leak",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+            "tintColor": "#1559E8",
+            "colors": [
+              "#1559E8",
+              "#D5E3FF"
+            ],
+            "captureButtonColors": [
+              "#1559E8",
+              "#D5E3FF"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/trend_chat_nhom_leak.png",
+              "sfSymbol": "bubble.left.and.bubble.right.fill",
+              "symbol": "bubble.left.and.bubble.right.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_thu_tinh",
+            "id": "pb_khung1_thu_tinh",
+            "name": "Thư Tình Gửi Cậu 💌",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_thu_tinh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+            "tintColor": "#E8A9B5",
+            "colors": [
+              "#E8A9B5",
+              "#F8D9D9"
+            ],
+            "captureButtonColors": [
+              "#E8A9B5",
+              "#F8D9D9"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_thu_tinh.png",
+              "sfSymbol": "envelope.fill",
+              "symbol": "envelope.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_cute",
+            "id": "pb_khung1_cute",
+            "name": "Cute Hết Cứu 🎀",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_cute",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+            "tintColor": "#FF9BCB",
+            "colors": [
+              "#FF9BCB",
+              "#F9D5EA"
+            ],
+            "captureButtonColors": [
+              "#FF9BCB",
+              "#F9D5EA"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_cute.png",
+              "sfSymbol": "sparkles",
+              "symbol": "sparkles",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_anh_tho",
+            "id": "pb_khung1_anh_tho",
+            "name": "Ảnh Thờ 🤡",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_anh_tho",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+            "tintColor": "#C78B38",
+            "colors": [
+              "#C78B38",
+              "#E5B96E"
+            ],
+            "captureButtonColors": [
+              "#C78B38",
+              "#E5B96E"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_anh_tho.png",
+              "sfSymbol": "photo",
+              "symbol": "photo",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_matmoc",
+            "id": "pb_khung1_matmoc",
+            "name": "Mặt Mộc 🤪",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_matmoc",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+            "tintColor": "#383538",
+            "colors": [
+              "#383538",
+              "#C4A374"
+            ],
+            "captureButtonColors": [
+              "#383538",
+              "#C4A374"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_matmoc.png",
+              "sfSymbol": "person.fill",
+              "symbol": "person.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "pb_khung1_luffy",
+            "id": "pb_khung1_luffy",
+            "name": "Truy Nã",
+            "category": "Khung 1 ảnh",
+            "prompt": "pb_khung1_luffy",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+            "tintColor": "#D9C3A7",
+            "colors": [
+              "#D9C3A7",
+              "#FFF1D8"
+            ],
+            "captureButtonColors": [
+              "#D9C3A7",
+              "#FFF1D8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/frames/pb_khung1_luffy.png",
+              "sfSymbol": "flag.fill",
+              "symbol": "flag.fill",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_co_dien",
+            "id": "photo_effect_co_dien",
+            "name": "Nâu Cổ Điển",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_co_dien",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+            "tintColor": "#8B5E3C",
+            "colors": [
+              "#8B5E3C",
+              "#D6B990"
+            ],
+            "captureButtonColors": [
+              "#8B5E3C",
+              "#D6B990"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_co_dien.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_dem_xanh",
+            "id": "photo_effect_dem_xanh",
+            "name": "Đêm Xanh",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_dem_xanh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+            "tintColor": "#172554",
+            "colors": [
+              "#172554",
+              "#3B82A6"
+            ],
+            "captureButtonColors": [
+              "#172554",
+              "#3B82A6"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_dem_xanh.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_film",
+            "id": "photo_effect_film",
+            "name": "Film 35mm",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+            "tintColor": "#777B68",
+            "colors": [
+              "#777B68",
+              "#E1CFAD"
+            ],
+            "captureButtonColors": [
+              "#777B68",
+              "#E1CFAD"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_matte",
+            "id": "photo_effect_matte",
+            "name": "Xám Matte",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_matte",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+            "tintColor": "#74706D",
+            "colors": [
+              "#74706D",
+              "#B7AEA5"
+            ],
+            "captureButtonColors": [
+              "#74706D",
+              "#B7AEA5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matte.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_nhat",
+            "id": "photo_effect_nhat",
+            "name": "Tông Phai",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_nhat",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+            "tintColor": "#B7A99F",
+            "colors": [
+              "#B7A99F",
+              "#E7DDD5"
+            ],
+            "captureButtonColors": [
+              "#B7A99F",
+              "#E7DDD5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_nhat.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_pastel",
+            "id": "photo_effect_pastel",
+            "name": "Pastel Dịu",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_pastel",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+            "tintColor": "#F2B9CF",
+            "colors": [
+              "#F2B9CF",
+              "#C7C3F3"
+            ],
+            "captureButtonColors": [
+              "#F2B9CF",
+              "#C7C3F3"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_pastel.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_teal_va_cam",
+            "id": "photo_effect_teal_va_cam",
+            "name": "Xanh Teal & Cam",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_teal_va_cam",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+            "tintColor": "#0F766E",
+            "colors": [
+              "#0F766E",
+              "#F59E42"
+            ],
+            "captureButtonColors": [
+              "#0F766E",
+              "#F59E42"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_teal_va_cam.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_trang_den",
+            "id": "photo_effect_trang_den",
+            "name": "Trắng Đen",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_trang_den",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+            "tintColor": "#222222",
+            "colors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "captureButtonColors": [
+              "#222222",
+              "#E5E5E5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_trang_den.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_tuong_phan",
+            "id": "photo_effect_tuong_phan",
+            "name": "Tương Phản Cao",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_tuong_phan",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+            "tintColor": "#292524",
+            "colors": [
+              "#292524",
+              "#F5E8D5"
+            ],
+            "captureButtonColors": [
+              "#292524",
+              "#F5E8D5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tuong_phan.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_am_ap",
+            "id": "photo_effect_am_ap",
+            "name": "Nắng Ấm",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_am_ap",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+            "tintColor": "#D97745",
+            "colors": [
+              "#D97745",
+              "#F9C784"
+            ],
+            "captureButtonColors": [
+              "#D97745",
+              "#F9C784"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_ap.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_mat_lanh",
+            "id": "photo_effect_mat_lanh",
+            "name": "Xanh Mát Lạnh",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_mat_lanh",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+            "tintColor": "#4D83A8",
+            "colors": [
+              "#4D83A8",
+              "#BCE4EF"
+            ],
+            "captureButtonColors": [
+              "#4D83A8",
+              "#BCE4EF"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_mat_lanh.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_am_mat_ong",
+            "id": "photo_effect_am_mat_ong",
+            "name": "Vàng Mật Ong",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_am_mat_ong",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+            "tintColor": "#B6946F",
+            "colors": [
+              "#B6946F",
+              "#EFDBC2"
+            ],
+            "captureButtonColors": [
+              "#B6946F",
+              "#EFDBC2"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_am_mat_ong.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_blue_hour",
+            "id": "photo_effect_blue_hour",
+            "name": "Blue Hour",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_blue_hour",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+            "tintColor": "#616D9E",
+            "colors": [
+              "#616D9E",
+              "#BEC7E8"
+            ],
+            "captureButtonColors": [
+              "#616D9E",
+              "#BEC7E8"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_blue_hour.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_film_nau",
+            "id": "photo_effect_film_nau",
+            "name": "Film Nâu",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_film_nau",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+            "tintColor": "#694733",
+            "colors": [
+              "#694733",
+              "#BF9470"
+            ],
+            "captureButtonColors": [
+              "#694733",
+              "#BF9470"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_film_nau.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_hong_milk",
+            "id": "photo_effect_hong_milk",
+            "name": "Hồng Sữa",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_hong_milk",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+            "tintColor": "#E9A2B8",
+            "colors": [
+              "#E9A2B8",
+              "#FCE2E9"
+            ],
+            "captureButtonColors": [
+              "#E9A2B8",
+              "#FCE2E9"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_hong_milk.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_lo_sang_film",
+            "id": "photo_effect_lo_sang_film",
+            "name": "Film Lộ Sáng",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_lo_sang_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+            "tintColor": "#E46D45",
+            "colors": [
+              "#E46D45",
+              "#FFD286"
+            ],
+            "captureButtonColors": [
+              "#E46D45",
+              "#FFD286"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_lo_sang_film.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_matcha",
+            "id": "photo_effect_matcha",
+            "name": "Xanh Matcha",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_matcha",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+            "tintColor": "#71854B",
+            "colors": [
+              "#71854B",
+              "#C6D5A0"
+            ],
+            "captureButtonColors": [
+              "#71854B",
+              "#C6D5A0"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_matcha.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_tim_y2k",
+            "id": "photo_effect_tim_y2k",
+            "name": "Tím Y2K",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_tim_y2k",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+            "tintColor": "#8B5CF6",
+            "colors": [
+              "#8B5CF6",
+              "#E7B5FF"
+            ],
+            "captureButtonColors": [
+              "#8B5CF6",
+              "#E7B5FF"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_tim_y2k.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
+          },
+          {
+            "uid": "photo_effect_xanh_film",
+            "id": "photo_effect_xanh_film",
+            "name": "Xanh Film",
+            "category": "Camera Filters",
+            "prompt": "photo_effect_xanh_film",
+            "style": "cutout",
+            "type": "normal",
+            "filterType": "cutout",
+            "overlay": true,
+            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+            "tintColor": "#50828B",
+            "colors": [
+              "#50828B",
+              "#B5D9D5"
+            ],
+            "captureButtonColors": [
+              "#50828B",
+              "#B5D9D5"
+            ],
+            "icon": {
+              "url": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/photo_effect_xanh_film.png",
+              "sfSymbol": "camera.filters",
+              "symbol": "camera.filters",
+              "emoji": ""
+            },
+            "outputUrl": null,
+            "productUrl": null,
+            "textColor": "#FFFFFF",
+            "referenceImages": []
           }
         ]
       },
@@ -8811,13 +13960,37 @@
       });
     }
 
+    const DEEP_MERGE_KEYS = new Set([
+      "feature_gates",
+      "camera",
+      "camera_roll",
+      "live_photos",
+      "overlays_v2_config",
+      "capture_classification_config",
+      "journal_settings",
+    ]);
+
     for (const [key, value] of Object.entries(jsonConfigs)) {
+      if (DEEP_MERGE_KEYS.has(key) && typeof config.entries[key] === "string") {
+        try {
+          const upstream = JSON.parse(config.entries[key]);
+          if (upstream && typeof upstream === "object" && !Array.isArray(upstream)) {
+            config.entries[key] = JSON.stringify(Object.assign({}, upstream, value));
+            continue;
+          }
+        } catch { }
+      }
       config.entries[key] = JSON.stringify(value);
     }
 
     try {
       const streak = JSON.parse(config.entries.streak_config || "{}");
       Object.assign(streak, {
+        "enabled": true,
+        "free_recovery": true,
+        "widget_streak_style": "hourglass_spinning",
+        "widget_streak_visibility_setting_enabled": true,
+        "calendar_minimum_streak_visualization_count": 1,
         "minimum_recovery_count": 0,
         "minimum_display_count": 0,
       });
