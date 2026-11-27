@@ -41,6 +41,17 @@
     });
     config.entries = config.entries || {};
 
+    // Trộn trực tiếp toàn bộ key mới nhất từ máy chủ Firebase khu vực Mỹ (iad1) do deleteHeader.js lấy về
+    try {
+      const rawUs = typeof $persistentStore !== "undefined" && $persistentStore.read("HNYB05_US_RC_ENTRIES");
+      if (rawUs) {
+        const usEntries = JSON.parse(rawUs);
+        if (usEntries && typeof usEntries === "object" && !Array.isArray(usEntries)) {
+          Object.assign(config.entries, usEntries);
+        }
+      }
+    } catch { }
+
     Object.assign(config.entries, {
       "cache_ttl_seconds": "0",
       "client_cache_ttl_sec": "0",
