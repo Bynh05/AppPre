@@ -7500,7 +7500,10 @@
         "detection": true,
         "debug_caption": false,
         "expanded_sheet_legacy_support": true,
-        "display_reaction_suggestions": true
+        "display_reaction_suggestions": true,
+        "quote": true,
+        "breaking_news": true,
+        "ai_caption": true
       },
       "friend_limit_geo_override": {
         "experiments": {},
@@ -13963,7 +13966,6 @@
       "camera",
       "camera_roll",
       "live_photos",
-      "capture_classification_config",
       "journal_settings",
     ]);
 
