@@ -121,9 +121,6 @@
       "typing_indicators_enabled": "true",
       "unsend_message_enabled": "true",
       "reply_prototype_enabled": "true",
-      "reply_moment_photo_enabled": "true",
-      "streak_reminders": "false",
-      "join_community_enabled": "true",
       "messages_integration": "true",
       "conversations_enabled": "true",
       "fetch_moments_in_conversation": "true",
@@ -136,21 +133,7 @@
       "time_travel_rewind_v2_enabled": "true",
       "conversation_drafts_enabled": "1",
       "calendar_delete_moment_enabled": "true",
-      "calendar_rewind_enabled": "true",
-      "audio_enabled": "true",
-      "audio_playback_enabled": "true",
-      "video_audio_enabled": "true",
-      "chat_read_receipts": "true",
-      "chat_read_receipts_mark_as_delivered_extension": "true",
-      "chat_mode": "5",
-      "rollcall_memories_streaks_enabled": "false",
-      "year_of_the_horse_icon_enabled": "true",
-      "camera_timer_enabled": "true",
-      "self_timer_enabled": "true",
-      "camera_themes": "[\"sakura\",\"snowflake\",\"sunset\",\"surfboard\",\"ootd\"]",
-      "camera_themes_config": "{\"enabled\":true,\"themes\":[\"sakura\",\"snowflake\",\"sunset\",\"surfboard\",\"ootd\"]}",
-      "camera_video_recording": "{\"default\":{\"maximum_duration\":60000,\"size\":1080,\"file_type\":\"mp4\",\"video_codec\":\"h265\"},\"gold\":{\"maximum_duration\":60000,\"size\":1080,\"file_type\":\"mp4\",\"video_codec\":\"h265\"}}",
-      "time_travel_rewind_v2_share_templates": "{\"templates\":[\"rounded_square\",\"grid_collage\",\"cutout_collage\",\"rounded_square_bold\",\"wall_calendar\"],\"random_order\":false}",
+      "calendar_rewind_enabled": "false",
       "locket_yearbook_story_sharing_encouraged": "true",
       "rollcall_enabled": "true",
       "rollcall_comment_actions": "true",
@@ -215,8 +198,6 @@
       "onboarding_contact_permission_step": "true",
       "overlay_navigator_enabled": "true",
       "captions_enabled": "true",
-      "quote_caption_enabled": "true",
-      "breaking_news_caption_enabled": "true",
       "music_caption_enabled": "true",
       "music_caption_song_preview_enabled": "true",
       "link_caption_link_enabled": "true"
@@ -238,18 +219,7 @@
         "custom_widget_frames": "enabled",
         "camera_filter_sheet": "enabled",
         "streak_recovery": "enabled",
-        "streak_reminders": "enabled",
-        "audio": "enabled",
-        "audio_playback": "enabled",
-        "video_audio": "enabled",
-        "camera_timer": "enabled",
-        "self_timer": "enabled",
-        "timer": "enabled",
-        "camera_themes": "enabled",
-        "ai_generation": "enabled",
-        "locket_ai_generation": "enabled",
-        "holiday_filters": "enabled",
-        "widget_frames": "enabled"
+        "streak_reminders": "enabled"
       },
       "upsell_features": {
         "app_icon_picker": false,
@@ -300,11 +270,6 @@
         "telephoto": true,
         "srgb": true,
         "lanczos": true,
-        "timer": true,
-        "timer_button": true,
-        "self_timer": true,
-        "countdown": true,
-        "countdown_timer": true,
         "quality_mbps": 0.6
       },
       "camera_roll": {
@@ -7500,10 +7465,7 @@
         "detection": true,
         "debug_caption": false,
         "expanded_sheet_legacy_support": true,
-        "display_reaction_suggestions": true,
-        "quote": true,
-        "breaking_news": true,
-        "ai_caption": true
+        "display_reaction_suggestions": true
       },
       "friend_limit_geo_override": {
         "experiments": {},
@@ -7659,6 +7621,15 @@
         },
         "photos_button_enabled": true
       },
+      "widget_frame_event": {
+        "uid": "blank",
+        "url": "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
+        "use_local_time_zone": true,
+        "placement": "below",
+        "start_at": "2020-01-01T00:00:00",
+        "end_at": "2099-12-31T23:59:59",
+        "custom_widget_frames": []
+      },
       "journal_settings": {
         "debug_menu_enabled": false,
         "focus_animation": false,
@@ -7720,9 +7691,7 @@
         "ootd",
         "miss_you",
         "custom",
-        "halloween_2026",
-        "quote",
-        "breaking_news"
+        "halloween_2026"
       ],
       "overlay_items": [
         {
@@ -13961,24 +13930,7 @@
       });
     }
 
-    const DEEP_MERGE_KEYS = new Set([
-      "feature_gates",
-      "camera",
-      "camera_roll",
-      "live_photos",
-      "journal_settings",
-    ]);
-
     for (const [key, value] of Object.entries(jsonConfigs)) {
-      if (DEEP_MERGE_KEYS.has(key) && typeof config.entries[key] === "string") {
-        try {
-          const upstream = JSON.parse(config.entries[key]);
-          if (upstream && typeof upstream === "object" && !Array.isArray(upstream)) {
-            config.entries[key] = JSON.stringify(Object.assign({}, upstream, value));
-            continue;
-          }
-        } catch { }
-      }
       config.entries[key] = JSON.stringify(value);
     }
 
