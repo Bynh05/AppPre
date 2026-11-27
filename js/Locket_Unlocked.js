@@ -122,7 +122,7 @@
       "unsend_message_enabled": "true",
       "reply_prototype_enabled": "true",
       "reply_moment_photo_enabled": "true",
-      "streak_reminders": "true",
+      "streak_reminders": "false",
       "join_community_enabled": "true",
       "messages_integration": "true",
       "conversations_enabled": "true",
@@ -143,7 +143,7 @@
       "chat_read_receipts": "true",
       "chat_read_receipts_mark_as_delivered_extension": "true",
       "chat_mode": "5",
-      "rollcall_memories_streaks_enabled": "true",
+      "rollcall_memories_streaks_enabled": "false",
       "year_of_the_horse_icon_enabled": "true",
       "camera_timer_enabled": "true",
       "self_timer_enabled": "true",
@@ -13979,11 +13979,6 @@
     try {
       const streak = JSON.parse(config.entries.streak_config || "{}");
       Object.assign(streak, {
-        "enabled": true,
-        "free_recovery": true,
-        "widget_streak_style": "hourglass_spinning",
-        "widget_streak_visibility_setting_enabled": true,
-        "calendar_minimum_streak_visualization_count": 1,
         "minimum_recovery_count": 0,
         "minimum_display_count": 0,
       });
