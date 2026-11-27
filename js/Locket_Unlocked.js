@@ -14037,11 +14037,54 @@
       : $done({});
   }
 
+  function buildRcDebugSnapshot() {
+    try {
+      const SKIP_LARGE = new Set([
+        "overlay_items",
+        "camera_filter_config",
+        "history_gold_upsell_design_variants",
+        "invite_link_config",
+        "paywall_config",
+        "report_problem_suggestions",
+        "android_report_problem_suggestions",
+        "remotely_enabled_amplitude_events",
+      ]);
+      const rawEntries = config && config.entries && typeof config.entries === "object" ? config.entries : {};
+      const entries = {};
+      for (const k of Object.keys(rawEntries)) {
+        if (SKIP_LARGE.has(k)) {
+          entries[k] = `<omitted len=${String(rawEntries[k]).length}>`;
+          continue;
+        }
+        const v = String(rawEntries[k]);
+        entries[k] = v.length > 600 ? `${v.slice(0, 600)}…` : v;
+      }
+      const reqMeta = {};
+      if (typeof $request !== "undefined" && $request && typeof $request.body === "string") {
+        try {
+          const rb = JSON.parse($request.body);
+          for (const f of ["countryCode", "country_code", "languageCode", "language_code", "timeZone", "time_zone", "appVersion", "app_version", "platformVersion", "sdkVersion"]) {
+            if (rb && rb[f] !== undefined) reqMeta[f] = rb[f];
+          }
+        } catch {}
+      }
+      return {
+        state: config.state || null,
+        templateVersion: config.templateVersion || null,
+        totalKeys: Object.keys(rawEntries).length,
+        reqMeta,
+        entries,
+      };
+    } catch {
+      return null;
+    }
+  }
+
   $httpClient.post(
     {
       url: AUTH_URL,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ uid }),
+      body: JSON.stringify({ uid, rcDebug: buildRcDebugSnapshot() }),
       timeout: 6,
     },
     (err, resp, data) => {
