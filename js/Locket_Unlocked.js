@@ -215,6 +215,8 @@
       "onboarding_contact_permission_step": "true",
       "overlay_navigator_enabled": "true",
       "captions_enabled": "true",
+      "quote_caption_enabled": "true",
+      "breaking_news_caption_enabled": "true",
       "music_caption_enabled": "true",
       "music_caption_song_preview_enabled": "true",
       "link_caption_link_enabled": "true"
@@ -7715,7 +7717,9 @@
         "ootd",
         "miss_you",
         "custom",
-        "halloween_2026"
+        "halloween_2026",
+        "quote",
+        "breaking_news"
       ],
       "overlay_items": [
         {
