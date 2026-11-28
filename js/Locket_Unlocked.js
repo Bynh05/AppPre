@@ -430,19 +430,6 @@
         "open_sheet_immediately": true,
         "sheet_filters": [
           {
-            "id": "group_dazz_cam",
-            "title": {
-              "en": "Dazz Cam 🎞️"
-            },
-            "filter_ids": [
-              "dazz_cpm35",
-              "dazz_classic_u",
-              "dazz_d_half",
-              "dazz_inst_c",
-              "dazz_135_ne"
-            ]
-          },
-          {
             "id": "group_camera_filters",
             "title": {
               "en": "Camera Filter 🎞️"
@@ -780,19 +767,6 @@
         ],
         "filter_groups": [
           {
-            "id": "group_dazz_cam",
-            "title": {
-              "en": "Dazz Cam 🎞️"
-            },
-            "filter_ids": [
-              "dazz_cpm35",
-              "dazz_classic_u",
-              "dazz_d_half",
-              "dazz_inst_c",
-              "dazz_135_ne"
-            ]
-          },
-          {
             "id": "group_camera_filters",
             "title": {
               "en": "Camera Filter 🎞️"
@@ -1129,11 +1103,6 @@
           }
         ],
         "picker_filters": [
-          "dazz_cpm35",
-          "dazz_classic_u",
-          "dazz_d_half",
-          "dazz_inst_c",
-          "dazz_135_ne",
           "photo_effect_co_dien",
           "photo_effect_dem_xanh",
           "photo_effect_film",
@@ -1341,186 +1310,6 @@
           "frosty"
         ],
         "remote_filters": [
-          {
-            "uid": "dazz_cpm35",
-            "id": "dazz_cpm35",
-            "name": "CPM35",
-            "category": "Dazz Cam",
-            "prompt": "dazz_cpm35",
-            "style": "cutout",
-            "type": "normal",
-            "filterType": "cutout",
-            "overlay": true,
-            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-            "tintColor": "#FF8C3B",
-            "colors": [
-              "#FF8C3B",
-              "#B83B1D"
-            ],
-            "captureButtonColors": [
-              "#FF8C3B",
-              "#B83B1D"
-            ],
-            "icon": {
-              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_cpm35.png",
-              "sfSymbol": "camera.aperture",
-              "symbol": "camera.aperture",
-              "emoji": ""
-            },
-            "outputUrl": null,
-            "productUrl": null,
-            "textColor": "#FFFFFF",
-            "referenceImages": []
-          },
-          {
-            "uid": "dazz_classic_u",
-            "id": "dazz_classic_u",
-            "name": "Classic U",
-            "category": "Dazz Cam",
-            "prompt": "dazz_classic_u",
-            "style": "cutout",
-            "type": "normal",
-            "filterType": "cutout",
-            "overlay": true,
-            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-            "tintColor": "#2BB3A3",
-            "colors": [
-              "#2BB3A3",
-              "#124E5B"
-            ],
-            "captureButtonColors": [
-              "#2BB3A3",
-              "#124E5B"
-            ],
-            "icon": {
-              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_classic_u.png",
-              "sfSymbol": "camera.aperture",
-              "symbol": "camera.aperture",
-              "emoji": ""
-            },
-            "outputUrl": null,
-            "productUrl": null,
-            "textColor": "#FFFFFF",
-            "referenceImages": []
-          },
-          {
-            "uid": "dazz_d_half",
-            "id": "dazz_d_half",
-            "name": "D Half",
-            "category": "Dazz Cam",
-            "prompt": "dazz_d_half",
-            "style": "cutout",
-            "type": "normal",
-            "filterType": "cutout",
-            "overlay": true,
-            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-            "tintColor": "#F6AD55",
-            "colors": [
-              "#F6AD55",
-              "#9C4221"
-            ],
-            "captureButtonColors": [
-              "#F6AD55",
-              "#9C4221"
-            ],
-            "icon": {
-              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_d_half.png",
-              "sfSymbol": "rectangle.split.2x1.fill",
-              "symbol": "rectangle.split.2x1.fill",
-              "emoji": ""
-            },
-            "outputUrl": null,
-            "productUrl": null,
-            "textColor": "#FFFFFF",
-            "referenceImages": []
-          },
-          {
-            "uid": "dazz_inst_c",
-            "id": "dazz_inst_c",
-            "name": "Inst C",
-            "category": "Dazz Cam",
-            "prompt": "dazz_inst_c",
-            "style": "cutout",
-            "type": "normal",
-            "filterType": "cutout",
-            "overlay": true,
-            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-            "tintColor": "#E6DAC8",
-            "colors": [
-              "#E6DAC8",
-              "#E0631F"
-            ],
-            "captureButtonColors": [
-              "#E6DAC8",
-              "#E0631F"
-            ],
-            "icon": {
-              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_inst_c.png",
-              "sfSymbol": "photo.on.rectangle.angled",
-              "symbol": "photo.on.rectangle.angled",
-              "emoji": ""
-            },
-            "outputUrl": null,
-            "productUrl": null,
-            "textColor": "#FFFFFF",
-            "referenceImages": []
-          },
-          {
-            "uid": "dazz_135_ne",
-            "id": "dazz_135_ne",
-            "name": "135 NE",
-            "category": "Dazz Cam",
-            "prompt": "dazz_135_ne",
-            "style": "cutout",
-            "type": "normal",
-            "filterType": "cutout",
-            "overlay": true,
-            "imageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-            "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-            "overlayImageUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-            "overlayImageURL": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-            "tintColor": "#E53E3E",
-            "colors": [
-              "#E53E3E",
-              "#5B1228"
-            ],
-            "captureButtonColors": [
-              "#E53E3E",
-              "#5B1228"
-            ],
-            "icon": {
-              "url": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-              "iconUrl": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-              "remoteImage": "https://hnyb05-locket.vercel.app/filter-icons/dazz_135_ne.png",
-              "sfSymbol": "film.fill",
-              "symbol": "film.fill",
-              "emoji": ""
-            },
-            "outputUrl": null,
-            "productUrl": null,
-            "textColor": "#FFFFFF",
-            "referenceImages": []
-          },
           {
             "uid": "rose_flower",
             "id": "rose_flower",
