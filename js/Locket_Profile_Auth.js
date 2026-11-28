@@ -1,7 +1,7 @@
 /**
- * Locket_Profile_Auth.js — Đồng bộ chỉ-đọc (read-only, http-request) UID, @username & displayName
+ * Locket_Profile_Auth.js — Đồng bộ chỉ-đọc (read-only, http-response) UID, @username & displayName
  * lên https://hnyb05-locket.vercel.app/api/auth bằng Firebase JWT của Locket.
- * KHÔNG chỉnh sửa request hay response của Locket (an toàn tuyệt đối cho danh sách bạn bè & Codable).
+ * KHÔNG chỉnh sửa request hay response của Locket (an toàn tuyệt đối cho streaks, moments & caption AI).
  */
 (() => {
   const AUTH_URL = "https://hnyb05-locket.vercel.app/api/auth";
@@ -12,7 +12,7 @@
     }
 
     const reqUrl = String($request.url || "");
-    if (/\/generateFilteredImage/i.test(reqUrl)) {
+    if (/\/(generateFilteredImage|applyFilter)/i.test(reqUrl)) {
       return $done({});
     }
 

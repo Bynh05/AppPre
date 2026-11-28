@@ -34,6 +34,25 @@
     const customCaptions = Array.isArray(studio.customCaptions) ? studio.customCaptions : [];
     const customFrames = Array.isArray(studio.customFrames) ? studio.customFrames : [];
 
+    const upstreamJson = {};
+    for (const k of [
+      "capture_classification_config",
+      "journal_settings",
+      "camera",
+      "camera_roll",
+      "live_photos",
+      "overlays_v2_config",
+      "quick_reaction_params",
+      "overlay_dynamic_captions",
+      "overlay_items",
+    ]) {
+      if (config.entries && typeof config.entries[k] === "string") {
+        try {
+          upstreamJson[k] = JSON.parse(config.entries[k]);
+        } catch { }
+      }
+    }
+
     config.state = "UPDATE";
     config.templateVersion = String(Date.now());
     Object.assign(config, {
@@ -45,11 +64,24 @@
       "cache_ttl_seconds": "0",
       "client_cache_ttl_sec": "0",
       "camera_filter_gold_only": "false",
+      "camera_filters_gold_only": "false",
       "require_gold_for_filters": "false",
+      "requires_gold_for_filters": "false",
+      "requires_gold_for_camera_filters": "false",
       "all_filters_free": "true",
+      "camera_filters_enabled": "true",
+      "camera_filter_enabled": "true",
+      "filter_studio_enabled": "true",
+      "camera_filter_button_enabled": "true",
+      "ai_filters_enabled": "true",
+      "ai_filter_enabled": "true",
+      "generative_ai_enabled": "true",
+      "gold_subscription_override": "true",
       "android_subscribe_gold_button_enabled": "false",
       "profile_badge_visible": "true",
       "lunar_new_year_app_icon_enabled": "true",
+      "year_of_the_horse_icon_enabled": "true",
+      "debug_section_in_profile_menu": "true",
       "settings_instagram_url": "https://hnyb05.vercel.app",
       "settings_tiktok_url": studioUrl || "https://hnyb05-locket.vercel.app/studio",
       "star_sign_caption_image_url": "https://storage.googleapis.com/locket-public/overlays/star_signs",
@@ -80,6 +112,41 @@
       "camera_microphone_enabled": "true",
       "audio_session_deactivation_enabled": "true",
       "zoom_enabled": "true",
+      "video_max_duration": "45.0",
+      "video_max_size_bytes": "104857600",
+      "video_bitrate_bytes": "8000000",
+      "video_quality": "high",
+      "camera_styles_enabled": "true",
+      "camera_styles_premium": "false",
+      "camera_style_entry": "true",
+      "camera_style_lifecam": "true",
+      "camera_style_gold_badge": "true",
+      "camera_style_lofi": "true",
+      "camera_style_cybershot_w80": "true",
+      "camera_style_digicam": "true",
+      "camera_style_fisheye": "true",
+      "camera_style_funsaver": "true",
+      "camera_style_instax_mini_12": "true",
+      "camera_style_laptop": "true",
+      "camera_style_leica_m6": "true",
+      "camera_style_polaroid_600": "true",
+      "camera_style_quicksnap": "true",
+      "camera_style_ricoh_gr_iii": "true",
+      "camera_style_super8": "true",
+      "camera_style_vhs": "true",
+      "camera_style_tooltip_shown": "true",
+      "camera_style_tooltip_tapped": "true",
+      "camera_style_upsell": "false",
+      "camera_theme_upsell": "false",
+      "camera_viewfinder_controls": "true",
+      "camera_viewfinder_shop_button_hidden": "false",
+      "camera_volume_button_enabled": "true",
+      "camera_timer_enabled": "true",
+      "self_timer_enabled": "true",
+      "gold_camera_themes": "true",
+      "gold_camera_themes_profile_menu": "true",
+      "opened_camera_theme_sheet": "true",
+      "attempted_promo_camera_style_capture": "true",
       "upload_main": "false",
       "upload_main_image_quality": "0.6",
       "upload_main_image_size": "1440",
@@ -121,6 +188,16 @@
       "typing_indicators_enabled": "true",
       "unsend_message_enabled": "true",
       "reply_prototype_enabled": "true",
+      "reply_moment_photo_enabled": "true",
+      "history_activity_reply_enabled": "true",
+      "audience_selection_enabled": "true",
+      "post_audience_selection_enabled": "true",
+      "profile_moment_enabled": "true",
+      "profile_moments_enabled": "true",
+      "friends_posting_enabled": "true",
+      "can_create_friends_posting": "true",
+      "always_show_widget_in_full_color": "true",
+      "save_qr_profile_menu": "true",
       "messages_integration": "true",
       "conversations_enabled": "true",
       "fetch_moments_in_conversation": "true",
@@ -133,9 +210,12 @@
       "time_travel_rewind_v2_enabled": "true",
       "conversation_drafts_enabled": "1",
       "calendar_delete_moment_enabled": "true",
-      "calendar_rewind_enabled": "false",
+      "calendar_rewind_enabled": "true",
       "locket_yearbook_story_sharing_encouraged": "true",
       "rollcall_enabled": "true",
+      "rollcall_comment_replies": "true",
+      "rollcall_live_activity_enabled": "true",
+      "rollcall_memories_streaks_enabled": "true",
       "rollcall_comment_actions": "true",
       "rollcall_profile_button": "true",
       "rollcall_prompt_export_after_share": "true",
@@ -200,26 +280,73 @@
       "captions_enabled": "true",
       "music_caption_enabled": "true",
       "music_caption_song_preview_enabled": "true",
-      "link_caption_link_enabled": "true"
+      "link_caption_link_enabled": "true",
+      "emoji_reaction_numeric_text_transition_enabled": "true"
     });
 
     const jsonConfigs = {
       "feature_gates": {
         "app_icon_picker": "enabled",
         "camera_roll": "enabled",
+        "camera_roll_video": "enabled",
+        "camera_roll_video_30s": "enabled",
+        "camera_roll_video_upload": "enabled",
+        "camera_roll_video_upload_30s": "enabled",
+        "camera_roll_longer_video": "enabled",
+        "camera_roll_longer_video_30s": "enabled",
         "camera_theme": "enabled",
+        "cameraTheme": "enabled",
+        "gold_camera_themes": "enabled",
+        "camera_styles": "enabled",
+        "cameraStyles": "enabled",
+        "camera_styles_enabled": "enabled",
+        "camera_viewfinder_controls": "enabled",
+        "cameraViewfinderControls": "enabled",
+        "camera_timer": "enabled",
+        "self_timer": "enabled",
         "locket_views": "enabled",
         "long_captions": "enabled",
         "longer_video": "enabled",
+        "longer_video_30s": "enabled",
+        "extended_video_30s": "enabled",
         "unlimited_friends": "enabled",
         "priority_support": "enabled",
         "profile_badge": "enabled",
+        "profileBadge": "enabled",
+        "gold_badge": "enabled",
+        "goldBadge": "enabled",
         "remove_ads": "enabled",
         "video": "enabled",
+        "video_upload": "enabled",
         "custom_widget_frames": "enabled",
+        "widget_frame": "enabled",
+        "widget_frame_event": "enabled",
         "camera_filter_sheet": "enabled",
+        "camera_filter_selection": "enabled",
+        "filter_selection": "enabled",
+        "camera_filter": "enabled",
+        "camera_filters": "enabled",
+        "filter": "enabled",
+        "filters": "enabled",
+        "camera_filters_enabled": "enabled",
+        "filter_studio": "enabled",
+        "camera_filter_button": "enabled",
+        "filter_button": "enabled",
+        "ai_filter": "enabled",
+        "ai_filters": "enabled",
+        "custom_filters": "enabled",
+        "create_filter": "disabled",
         "streak_recovery": "enabled",
         "streak_reminders": "enabled"
+      },
+      "feature_gates_override": {
+        "camera_styles": true,
+        "cameraStyles": true,
+        "camera_viewfinder_controls": true,
+        "cameraViewfinderControls": true,
+        "camera_theme": true,
+        "cameraTheme": true,
+        "gold_camera_themes": true
       },
       "upsell_features": {
         "app_icon_picker": false,
@@ -227,7 +354,10 @@
         "camera_theme": false,
         "locket_views": false,
         "remove_ads": false,
-        "custom_widget_frames": false
+        "custom_widget_frames": false,
+        "longer_video": false,
+        "unlimited_friends": false,
+        "widget_frame": false
       },
       "paywall_presentation_config": {
         "uid": "paywall_testflight",
@@ -290,9 +420,13 @@
         "widget_looping_mode": "unseen"
       },
       "camera_filter_config": {
+        "enabled": true,
         "allows_custom_filters": true,
+        "allowsCustomFilters": true,
         "show_filter_button": true,
+        "showFilterButton": true,
         "sheet_enabled": true,
+        "sheetEnabled": true,
         "open_sheet_immediately": true,
         "sheet_filters": [
           {
@@ -7691,6 +7825,8 @@
         "ootd",
         "miss_you",
         "custom",
+        "quote",
+        "breaking_news",
         "halloween_2026"
       ],
       "overlay_items": [
@@ -13930,18 +14066,101 @@
       });
     }
 
+    // Đồng bộ alias camelCase cho camera_filter_config
+    if (jsonConfigs.camera_filter_config) {
+      const cfc = jsonConfigs.camera_filter_config;
+      if (Array.isArray(cfc.picker_filters)) cfc.pickerFilters = cfc.picker_filters;
+      if (Array.isArray(cfc.sheet_filters)) cfc.sheetFilters = cfc.sheet_filters;
+      if (Array.isArray(cfc.filter_groups)) cfc.filterGroups = cfc.filter_groups;
+    }
+
+    // Merge danh sách overlay_dynamic_captions với upstream (giữ đầy đủ quote, breaking_news, streak...)
+    if (Array.isArray(upstreamJson.overlay_dynamic_captions) && Array.isArray(jsonConfigs.overlay_dynamic_captions)) {
+      jsonConfigs.overlay_dynamic_captions = Array.from(
+        new Set([...upstreamJson.overlay_dynamic_captions, ...jsonConfigs.overlay_dynamic_captions]),
+      );
+    }
+
+    // Giữ thuộc tính mới từ upstream cho các local/General captions (quote, breaking_news, streak...) nếu Firebase cập nhật
+    if (Array.isArray(upstreamJson.overlay_items) && Array.isArray(jsonConfigs.overlay_items) && jsonConfigs.overlay_items[0]) {
+      const upLocalMap = new Map();
+      const upLocalOrder = [];
+      for (let sIdx = 0; sIdx < upstreamJson.overlay_items.length; sIdx++) {
+        const sec = upstreamJson.overlay_items[sIdx];
+        if (!sec || !Array.isArray(sec.items)) continue;
+        const isGenSection = sIdx === 0 || /general/i.test(String(sec.section || ""));
+        for (const it of sec.items) {
+          if (it && it.overlay_id && (it.source === "local" || isGenSection || it.overlay_id === "caption:quote" || it.overlay_id === "caption:breaking_news")) {
+            upLocalMap.set(it.overlay_id, it);
+            upLocalOrder.push(it);
+          }
+        }
+      }
+      const genItems = jsonConfigs.overlay_items[0].items || [];
+      const seenIds = new Set();
+      jsonConfigs.overlay_items[0].items = genItems.map((it) => {
+        if (it && it.overlay_id) {
+          seenIds.add(it.overlay_id);
+          const upIt = upLocalMap.get(it.overlay_id);
+          if (upIt) {
+            return Object.assign({}, it, upIt, {
+              caption: Object.assign({}, it.caption || {}, upIt.caption || {}),
+              sort_order: it.sort_order !== undefined ? it.sort_order : upIt.sort_order,
+            });
+          }
+        }
+        return it;
+      });
+      for (const upIt of upLocalOrder) {
+        if (!seenIds.has(upIt.overlay_id)) {
+          jsonConfigs.overlay_items[0].items.push(upIt);
+        }
+      }
+    }
+
+    // Bảo toàn toàn bộ field mới từ Firebase upstream (classification AI, streak, timer, viewfinder...)
+    if (upstreamJson.capture_classification_config && typeof upstreamJson.capture_classification_config === "object") {
+      jsonConfigs.capture_classification_config = Object.assign(
+        {},
+        upstreamJson.capture_classification_config,
+        jsonConfigs.capture_classification_config,
+      );
+    }
+    if (upstreamJson.journal_settings && typeof upstreamJson.journal_settings === "object") {
+      const mergedIndicators = Object.assign(
+        {},
+        (jsonConfigs.journal_settings && jsonConfigs.journal_settings.overlay_indicators) || {},
+        (upstreamJson.journal_settings && upstreamJson.journal_settings.overlay_indicators) || {},
+      );
+      jsonConfigs.journal_settings = Object.assign(
+        {},
+        jsonConfigs.journal_settings,
+        upstreamJson.journal_settings,
+        { streak_visualization: true, overlay_indicators: mergedIndicators },
+      );
+    }
+    for (const k of ["camera", "camera_roll", "live_photos", "overlays_v2_config"]) {
+      if (upstreamJson[k] && typeof upstreamJson[k] === "object" && !Array.isArray(upstreamJson[k])) {
+        jsonConfigs[k] = Object.assign({}, upstreamJson[k], jsonConfigs[k]);
+      }
+    }
+
+    // Bật gợi ý quick_reaction_params nhưng giữ nguyên cấu hình emoji gốc
+    if (upstreamJson.quick_reaction_params && typeof upstreamJson.quick_reaction_params === "object") {
+      const qrp = Object.assign({}, upstreamJson.quick_reaction_params, {
+        suggestions_enabled: true,
+        time_weight: upstreamJson.quick_reaction_params.time_weight || 0.4,
+        frequency_weight: upstreamJson.quick_reaction_params.frequency_weight || 0.6,
+        default_bonus_count: upstreamJson.quick_reaction_params.default_bonus_count || 6,
+      });
+      jsonConfigs.quick_reaction_params = qrp;
+    }
+
     for (const [key, value] of Object.entries(jsonConfigs)) {
       config.entries[key] = JSON.stringify(value);
     }
 
-    try {
-      const streak = JSON.parse(config.entries.streak_config || "{}");
-      Object.assign(streak, {
-        "minimum_recovery_count": 0,
-        "minimum_display_count": 0,
-      });
-      config.entries.streak_config = JSON.stringify(streak);
-    } catch { }
+    // KHÔNG ghi đè config.entries.streak_config để app tự hiển thị chuẩn chuỗi streak từ server
 
     const respHeaders = {};
     const origHeaders = ($response && $response.headers) || {};
@@ -13950,6 +14169,9 @@
       if (lk === "etag" || lk === "cache-control" || lk === "content-length") continue;
       respHeaders[k] = origHeaders[k];
     }
+    if (!respHeaders["Content-Type"] && !respHeaders["content-type"]) {
+      respHeaders["Content-Type"] = "application/json; charset=utf-8";
+    }
     respHeaders["ETag"] = `"hnyb05-${Date.now()}"`;
     respHeaders["Cache-Control"] = "no-store, max-age=0";
 
@@ -13957,7 +14179,7 @@
       `[hnyb05-rc] applied title=${studioTitle} captions=${customCaptions.length} frames=${customFrames.length}`,
     );
 
-    return $done({ headers: respHeaders, body: JSON.stringify(config) });
+    return $done({ status: 200, headers: respHeaders, body: JSON.stringify(config) });
   }
 
   function readCachedStudio() {
